@@ -1,35 +1,44 @@
 <svg width="1920" height="1080" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Base Background Gradient -->
+    <!-- Base Background -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#EAEBEF"/>
-      <stop offset="100%" stop-color="#F5F5F7"/>
+      <stop offset="0%" stop-color="#F2F2F7"/>
+      <stop offset="100%" stop-color="#E5E5EA"/>
     </linearGradient>
 
-    <!-- Soft White Gradients for Waves -->
-    <linearGradient id="waveLight" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.5"/>
-    </linearGradient>
-    
-    <linearGradient id="waveDim" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#EBEBF0" stop-opacity="0.2"/>
+    <!-- Extreme Gaussian Blur for the Mesh/Aurora Effect -->
+    <filter id="liquidBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="160"/>
+    </filter>
+
+    <!-- Depth of Field Blurs for Waves -->
+    <filter id="heavyBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+    <filter id="mediumBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="24"/>
+    </filter>
+
+    <!-- Soft Drop Shadows for the sharpest foreground layers -->
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="40" flood-color="#000000" flood-opacity="0.04"/>
+    </filter>
+
+    <!-- Gradients for the Liquid Waves -->
+    <linearGradient id="waveDim" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0"/>
     </linearGradient>
 
     <linearGradient id="waveBright" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.5"/>
     </linearGradient>
 
-    <!-- Extremely soft drop shadow to create physical depth without harsh lines -->
-    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="24" stdDeviation="48" flood-color="#000000" flood-opacity="0.03"/>
-    </filter>
-
-    <filter id="softShadowLight" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="12" stdDeviation="24" flood-color="#000000" flood-opacity="0.02"/>
-    </filter>
+    <linearGradient id="waveFront" x1="50%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.8"/>
+    </linearGradient>
 
     <!-- Noise for premium physical texture -->
     <filter id="grain">
@@ -38,26 +47,39 @@
     </filter>
   </defs>
 
-  <!-- Background Base -->
+  <!-- 1. Solid Background Base -->
   <rect width="100%" height="100%" fill="url(#bgGrad)"/>
 
-  <!-- Wave Layers -->
-  <g>
-    <!-- BACK LAYER: The large swooping highlight, acting as the thick "halo" -->
-    <path d="M -100,850 C 300,850 350,150 850,150 C 1450,150 1600,400 2000,400 L 2000,1200 L -100,1200 Z" fill="#FFFFFF" opacity="0.4" filter="url(#softShadow)"/>
-
-    <!-- MID LAYER: The main swooping wave -->
-    <path d="M -100,900 C 250,900 350,220 850,220 C 1400,220 1600,450 2000,450 L 2000,1200 L -100,1200 Z" fill="url(#waveLight)" filter="url(#softShadow)"/>
-
-    <!-- FRONT LAYER BOTTOM RIGHT: The halo -->
-    <path d="M 900,1200 C 1200,800 1500,650 2000,800 L 2000,1200 Z" fill="#FFFFFF" opacity="0.5" filter="url(#softShadowLight)"/>
-    <!-- FRONT LAYER BOTTOM RIGHT: Main wave -->
-    <path d="M 1000,1200 C 1250,850 1550,700 2000,850 L 2000,1200 Z" fill="url(#waveBright)" filter="url(#softShadowLight)"/>
-
-    <!-- FRONT LAYER BOTTOM LEFT: The subtle ground curve -->
-    <path d="M -100,1200 L -100,1050 C 150,1050 300,1080 500,1200 Z" fill="url(#waveDim)" opacity="0.9" filter="url(#softShadowLight)"/>
+  <!-- 2. Iridescent Liquid Pearl Mesh (Deepest layer, extremely blurred) -->
+  <g filter="url(#liquidBlur)">
+    <ellipse cx="15%" cy="5%" rx="50%" ry="60%" fill="#E0D4F5" opacity="0.6"/> <!-- Lavender -->
+    <ellipse cx="85%" cy="15%" rx="45%" ry="55%" fill="#CFF0FA" opacity="0.7"/> <!-- Ice Blue -->
+    <ellipse cx="30%" cy="95%" rx="60%" ry="50%" fill="#FDE2E4" opacity="0.6"/> <!-- Pearl Pink -->
+    <ellipse cx="85%" cy="90%" rx="50%" ry="55%" fill="#D8F5E1" opacity="0.5"/> <!-- Soft Mint -->
+    <ellipse cx="50%" cy="50%" rx="40%" ry="45%" fill="#FFFFFF" opacity="0.9"/> <!-- Core White Highlight -->
   </g>
 
-  <!-- Multiply Noise -->
+  <!-- 3. Submerged Fluid Waves (Depth of Field effect) -->
+  <g>
+    <!-- Deepest background wave (Out of focus) -->
+    <path d="M -100,500 C 400,450 600,100 1200,200 C 1600,250 1800,-50 2100,50 L 2100,1200 L -100,1200 Z" fill="#FFFFFF" opacity="0.4" filter="url(#heavyBlur)"/>
+
+    <!-- Mid-ground wave (Slightly out of focus) -->
+    <path d="M -100,750 C 400,700 600,250 1200,350 C 1600,400 1800,150 2100,250 L 2100,1200 L -100,1200 Z" fill="url(#waveDim)" filter="url(#mediumBlur)"/>
+  </g>
+
+  <!-- 4. Foreground Sharp Glass Waves (In focus, with drop shadows) -->
+  <g>
+    <!-- Sharp, primary swooping wave -->
+    <path d="M -100,950 C 250,950 400,450 1000,450 C 1400,450 1600,650 2100,600 L 2100,1200 L -100,1200 Z" fill="url(#waveBright)" filter="url(#softShadow)"/>
+    
+    <!-- Secondary sharp curve on the bottom right -->
+    <path d="M 1100,1200 C 1300,850 1600,750 2100,900 L 2100,1200 Z" fill="url(#waveFront)" filter="url(#softShadow)"/>
+    
+    <!-- Bottom left accent curve -->
+    <path d="M -100,1200 L -100,1100 C 100,1100 250,1120 450,1200 Z" fill="#FFFFFF" opacity="0.9" filter="url(#softShadow)"/>
+  </g>
+
+  <!-- 5. Noise Overlay -->
   <rect width="100%" height="100%" filter="url(#grain)" opacity="0.04" style="mix-blend-mode: multiply; pointer-events: none;"/>
 </svg>
