@@ -18,7 +18,7 @@ b {
   --bg-in: rgba(255, 255, 255, 0.04);
   --bg-st: rgba(255, 255, 255, 0.02);
   --bg-num: rgba(255, 255, 255, 0.06);
-  --bg-hv: rgba(255, 255, 255, 0.08);
+  --bg-hv: rgba(255, 255, 255, 0.12);
   --bg-tg: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
   --bd-l: rgba(255, 255, 255, 0.2);
   --bd-d: rgba(255, 255, 255, 0.05);
@@ -57,7 +57,7 @@ body.W {
   --bg-in: linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.45));
   --bg-st: linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.35));
   --bg-num: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 1));
-  --bg-hv: linear-gradient(135deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.08));
+  --bg-hv: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.8));
   --bg-tg: linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.3));
   --bd-l: rgba(0, 0, 0, 0.06);
   --bd-d: rgba(0, 0, 0, 0.08);
@@ -378,6 +378,7 @@ body.W .tag {
 .btn:hover {
   background: var(--bg-hv);
   box-shadow: var(--el-sh-hv);
+  transform: scale(1.02);
 }
 .btn:active {
   box-shadow: var(--el-sh-ac);

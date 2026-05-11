@@ -63,35 +63,30 @@
       </b>
     </main>
     <script>
-      const inp = document.getElementById("email-input");
-      const grp = document.getElementById("email-group");
+      const D = document, 
+            byId = id => D.getElementById(id),
+            body = D.body;
+
+      const inp = byId("email-input"),
+            grp = byId("email-group");
+
       inp.addEventListener("input", () => {
         grp.classList.toggle("has-value", inp.value.length > 0);
       });
 
       // Theme logic
-      const themeToggle = document.getElementById('theme-toggle');
-      const themeIcon = themeToggle.querySelector('img');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+      const themeToggle = byId('theme-toggle'),
+            themeIcon = themeToggle.querySelector('img'),
+            prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
       
-      function setTheme(isDark) {
-        if (isDark) {
-          document.documentElement.removeAttribute('data-theme');
-          themeIcon.src = 'svg/sun.svg';
-        } else {
-          document.documentElement.setAttribute('data-theme', 'light');
-          themeIcon.src = 'svg/moon.svg';
-        }
-      }
+      const setTheme = isDark => {
+        body.classList.toggle('W', !isDark);
+        themeIcon.src = isDark ? 'svg/sun.svg' : 'svg/moon.svg';
+      };
 
       setTheme(prefersDark.matches);
-
-      prefersDark.addEventListener('change', (e) => setTheme(e.matches));
-
-      themeToggle.addEventListener('click', () => {
-        const isCurrentlyDark = !document.documentElement.hasAttribute('data-theme');
-        setTheme(!isCurrentlyDark);
-      });
+      prefersDark.addEventListener('change', e => setTheme(e.matches));
+      themeToggle.addEventListener('click', () => setTheme(body.classList.contains('W')));
     </script>
   </body>
 </html>
