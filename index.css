@@ -35,6 +35,7 @@
   --demo-hover: rgba(255, 255, 255, 0.08);
   --glass-shadow: inset -4px -4px 16px rgba(0, 0, 0, 0.4), inset 0 0 0 0.5px rgba(255, 255, 255, 0.05);
   --element-shadow: inset -2px -2px 8px rgba(0, 0, 0, 0.2), inset 0 0 0 0.5px rgba(255, 255, 255, 0.05);
+  --element-shadow-hover: inset -2px -2px 12px rgba(0, 0, 0, 0.3), inset 0 0 0 0.5px rgba(255, 255, 255, 0.1);
   --filter-glass: url("svg/filter/B/glass.svg#l");
   --filter-highlight: url("svg/filter/B/highlight.svg#hl");
 }
@@ -48,19 +49,19 @@
   --text-quaternary: #8E8E93;
   --text-btn: #3C3C43;
   --glass-bg: rgba(255, 255, 255, 0.5);
-  --glass-bg-input: rgba(255, 255, 255, 0.7);
-  --glass-bg-steps: rgba(255, 255, 255, 0.35);
-  --glass-bg-step-num: rgba(255, 255, 255, 0.85);
-  --glass-bg-hover: rgba(255, 255, 255, 0.7);
-  --glass-border-light: rgba(0, 0, 0, 0.1);
-  --glass-border-dark: rgba(0, 0, 0, 0.12);
-  --glass-border-mid: rgba(255, 255, 255, 1);
+  --glass-bg-input: rgba(0, 0, 0, 0.04);
+  --glass-bg-steps: rgba(0, 0, 0, 0.03);
+  --glass-bg-step-num: rgba(255, 255, 255, 1);
+  --glass-bg-hover: rgba(0, 0, 0, 0.06);
+  --glass-border-light: rgba(255, 255, 255, 0.9);
+  --glass-border-dark: rgba(0, 0, 0, 0.2);
+  --glass-border-mid: rgba(0, 0, 0, 0.15);
   --glass-border-dim: rgba(0, 0, 0, 0.04);
   --glass-border-bright: rgba(255, 255, 255, 1);
   --glass-border-faint: rgba(255, 255, 255, 0.8);
   --btn-primary-bg: rgba(0, 122, 255, 0.08);
   --btn-primary-hover: rgba(0, 122, 255, 0.12);
-  --btn-primary-shadow-in: rgba(0, 122, 255, 0.1);
+  --btn-primary-shadow-in: rgba(0, 122, 255, 0.25);
   --btn-primary-shadow-out: rgba(0, 0, 0, 0.05);
   --btn-primary-text-shadow: rgba(0, 122, 255, 0.2);
   --btn-primary-active-shadow: rgba(0, 122, 255, 0.05);
@@ -69,8 +70,30 @@
   --divider-bg: url("svg/W/divider.svg") no-repeat center/100% 100%;
   --step-divider-color: transparent;
   --demo-hover: rgba(255, 255, 255, 0.8);
-  --glass-shadow: inset -6px -6px 20px rgba(0, 0, 0, 0.05), inset 0 0 0 0.5px rgba(0, 0, 0, 0.06);
-  --element-shadow: inset -3px -3px 10px rgba(0, 0, 0, 0.03), inset 0 0 0 0.5px rgba(0, 0, 0, 0.08);
+  
+  /* Big frame exact highlight match & subtle outer shadow for light mode */
+  --glass-shadow: 
+    inset -1.5px -1.5px 0px rgba(255, 255, 255, 0.8), 
+    inset -4px -4px 16px rgba(255, 255, 255, 0.5), 
+    inset 2px 2px 12px rgba(0, 0, 0, 0.05),
+    inset 0 0 0 0.5px rgba(0, 0, 0, 0.12),
+    0 16px 40px rgba(0, 0, 0, 0.06);
+    
+  /* Inner components scaled-down highlight & subtle outer shadow */
+  --element-shadow: 
+    inset -1px -1px 0px rgba(255, 255, 255, 0.8),
+    inset -2px -2px 8px rgba(255, 255, 255, 0.4),
+    inset 1px 1px 6px rgba(0, 0, 0, 0.04),
+    inset 0 0 0 0.5px rgba(0, 0, 0, 0.08),
+    0 4px 12px rgba(0, 0, 0, 0.03);
+    
+  --element-shadow-hover: 
+    inset -1px -1px 0px rgba(255, 255, 255, 0.9),
+    inset -2px -2px 8px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 16px rgba(0, 0, 0, 0.08),
+    inset 0 0 0 0.5px rgba(0, 0, 0, 0.15),
+    0 4px 12px rgba(0, 0, 0, 0.03);
+    
   --filter-glass: url("svg/filter/W/glass.svg#l");
   --filter-highlight: url("svg/filter/W/highlight.svg#hl");
 }
@@ -108,10 +131,6 @@ body {
   position: relative;
   z-index: 1;
   box-shadow: var(--glass-shadow);
-  box-shadow:
-    inset 1px 1px 0px var(--glass-border-light),
-    inset -1px -1px 0px var(--glass-border-dark),
-    inset 2px 2px 12px var(--glass-border-dark);
 }
 
 .LG::before {
@@ -207,11 +226,7 @@ body {
   background: var(--glass-bg-hover);
   position: relative;
   z-index: 1;
-  box-shadow:
-    inset 1px 1px 0px var(--glass-border-bright),
-    inset -1px -1px 0px var(--glass-border-light),
-    inset 2px 2px 8px 1px var(--glass-border-faint),
-    var(--element-shadow);
+      box-shadow: var(--element-shadow);
 }
 
 .hero-tag::after {
@@ -226,8 +241,7 @@ body {
   background-image: linear-gradient(
     135deg,
     var(--glass-border-mid),
-    transparent 30%,
-    transparent 70%,
+    transparent 40%,
     var(--glass-border-light)
   );
   background-origin: border-box;
@@ -252,10 +266,7 @@ body {
   display: flex;
   align-items: center;
   transition: padding 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow:
-    inset 1px 1px 0px var(--glass-border-bright),
-    inset -1px -1px 0px var(--glass-border-light),
-    inset 2px 2px 8px 1px var(--glass-border-faint);
+      box-shadow: var(--element-shadow);
 }
 
 .input-group::before {
@@ -287,8 +298,7 @@ body {
   background-image: linear-gradient(
     135deg,
     var(--glass-border-mid),
-    transparent 30%,
-    transparent 70%,
+    transparent 40%,
     var(--glass-border-light)
   );
   background-origin: border-box;
@@ -346,11 +356,11 @@ body {
   z-index: 1;
   border: none;
   color: var(--text-btn);
-  box-shadow:
-    inset 1px 1px 0px var(--glass-border-bright),
-    inset -1px -1px 0px var(--glass-border-light),
-    inset 2px 2px 8px 1px var(--glass-border-faint),
-    var(--element-shadow);
+  box-shadow: var(--element-shadow);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.LG-btn:hover {
+  box-shadow: var(--element-shadow-hover);
 }
 .LG-btn::before {
   content: "";
@@ -373,8 +383,7 @@ body {
   background-image: linear-gradient(
     135deg,
     var(--glass-border-mid),
-    transparent 30%,
-    transparent 70%,
+    transparent 40%,
     var(--glass-border-light)
   );
   background-origin: border-box;
@@ -408,12 +417,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow:
-    inset 1.5px 0px 0px var(--glass-border-bright),
-    inset -1.5px 0px 0px var(--glass-border-bright),
-    inset 0px 1.5px 0px var(--glass-border-bright),
-    inset 0px -1.5px 0px rgba(10, 132, 255, 0.3),
-    inset 0px 4px 12px var(--glass-border-faint),
+      box-shadow:
+    inset 0px 4px 12px rgba(255,255,255,0.3),
     var(--element-shadow);
 }
 
@@ -437,10 +442,10 @@ body {
   
   border: 0.5px solid transparent;
   background-image: linear-gradient(
-    135deg,
+    90deg,
     var(--glass-border-mid),
-    transparent 30%,
-    transparent 70%,
+    transparent 15%,
+    transparent 85%,
     var(--glass-border-mid)
   );
   background-origin: border-box;
@@ -486,6 +491,7 @@ body {
 
 .demo-link:hover {
   background: var(--demo-hover);
+  box-shadow: var(--element-shadow-hover);
 }
 
 .steps {
@@ -495,21 +501,37 @@ body {
   background: var(--glass-bg-steps);
   border-radius: var(--r);
   position: relative;
+  z-index: 1;
+  box-shadow: var(--element-shadow);
+}
+
+.steps::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  clip-path: inset(0 round var(--r));
+  backdrop-filter: blur(16px) var(--filter-glass);
 }
 
 .steps::after {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: -1;
   border-radius: inherit;
   pointer-events: none;
-  padding: 1px;
-  background: linear-gradient(
+  
+  border: 0.5px solid transparent;
+  background-image: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    transparent 50%,
-    rgba(255, 255, 255, 0.02) 100%
+    var(--glass-border-mid),
+    transparent 40%,
+    var(--glass-border-light)
   );
+  background-origin: border-box;
+  background-clip: border-box;
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
@@ -578,11 +600,7 @@ body {
   -webkit-user-select: none;
   position: relative;
   z-index: 1;
-  box-shadow:
-    inset 1px 1px 0px var(--glass-border-bright),
-    inset -1px -1px 0px var(--glass-border-light),
-    inset 2px 2px 8px 1px var(--glass-border-faint),
-    var(--element-shadow);
+      box-shadow: var(--element-shadow);
 }
 
 .step-number::after {
@@ -597,8 +615,7 @@ body {
   background-image: linear-gradient(
     135deg,
     var(--glass-border-mid),
-    transparent 30%,
-    transparent 70%,
+    transparent 40%,
     var(--glass-border-light)
   );
   background-origin: border-box;
