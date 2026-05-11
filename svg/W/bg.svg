@@ -1,78 +1,72 @@
 <svg width="1920" height="1080" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Background Gradient -->
+    <!-- Base Background: Very clean, bright frosted silver -->
     <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#F6F7F9"/>
-      <stop offset="100%" stop-color="#E5E7EB"/>
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#EEF2F6"/>
     </linearGradient>
 
-    <!-- Vibrant Gradients -->
-    <linearGradient id="green" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#34D399"/>
-      <stop offset="100%" stop-color="#059669"/>
-    </linearGradient>
-    <linearGradient id="purple" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#3B82F6"/>
-      <stop offset="50%" stop-color="#8B5CF6"/>
-      <stop offset="100%" stop-color="#F43F5E"/>
-    </linearGradient>
-    <linearGradient id="blue" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#60A5FA"/>
-      <stop offset="100%" stop-color="#2563EB"/>
+    <!-- Liquid Glass Iridescent Colors -->
+    <!-- Vibrant Cyan to Deep Blue -->
+    <linearGradient id="flowCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#0EA5E9" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.95"/>
     </linearGradient>
 
-    <!-- Glow/Blur -->
-    <filter id="blur" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="40" result="blur"/>
+    <!-- Coral Pink to Magenta -->
+    <linearGradient id="flowPink" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F43F5E" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#D946EF" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#C084FC" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Holographic Purple/Lavender -->
+    <linearGradient id="flowPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#A855F7" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#EC4899" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <!-- Soft Ambient Glow Filter -->
+    <filter id="softGlow" x="-30%" y="-50%" width="160%" height="200%">
+      <feGaussianBlur stdDeviation="80" result="blur"/>
     </filter>
   </defs>
 
   <!-- 1. Background -->
   <rect width="100%" height="100%" fill="url(#bg)"/>
 
-  <!-- 2. Grid Lines -->
-  <g stroke="#CBD5E1" stroke-width="1.5" opacity="0.6">
-    <line x1="0" y1="270" x2="1920" y2="270"/>
-    <line x1="0" y1="540" x2="1920" y2="540"/>
-    <line x1="0" y1="810" x2="1920" y2="810"/>
-    
-    <line x1="480" y1="0" x2="480" y2="1080"/>
-    <line x1="960" y1="0" x2="960" y2="1080"/>
-    <line x1="1440" y1="0" x2="1440" y2="1080"/>
+  <!-- 2. Screen-Spanning Fluid Curved Ribbons -->
+  
+  <!-- Top Curve: Coral to Magenta -->
+  <!-- Ambient Glow -->
+  <path d="M-100,200 C400,350 1400,50 2100,200 L2100,350 C1400,200 400,500 -100,350 Z" fill="url(#flowPink)" filter="url(#softGlow)" opacity="0.6"/>
+  <!-- Crisp Core Geometric Curve -->
+  <path d="M-100,200 C400,350 1400,50 2100,200 L2100,350 C1400,200 400,500 -100,350 Z" fill="url(#flowPink)" opacity="0.85"/>
+  <!-- Glass Edge -->
+  <path d="M-100,230 C400,380 1400,80 2100,230" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.8"/>
 
-    <!-- Fine grid detail -->
-    <circle cx="480" cy="270" r="100" fill="none"/>
-    <circle cx="1440" cy="270" r="100" fill="none"/>
-    <circle cx="480" cy="810" r="100" fill="none"/>
-    <circle cx="1440" cy="810" r="100" fill="none"/>
-    <circle cx="960" cy="540" r="160" fill="none"/>
-  </g>
+  <!-- Center Sweeping Holographic Purple -->
+  <!-- Ambient Glow -->
+  <path d="M-100,450 C600,300 1400,650 2100,450 L2100,600 C1400,800 600,450 -100,600 Z" fill="url(#flowPurple)" filter="url(#softGlow)" opacity="0.6"/>
+  <!-- Crisp Core Geometric Curve -->
+  <path d="M-100,450 C600,300 1400,650 2100,450 L2100,600 C1400,800 600,450 -100,600 Z" fill="url(#flowPurple)" opacity="0.85"/>
+  <!-- Glass Edge -->
+  <path d="M-100,480 C600,330 1400,680 2100,480" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.7"/>
 
-  <!-- Center Crosshair -->
-  <g stroke="#111827" stroke-width="6" stroke-linecap="round">
-    <line x1="930" y1="540" x2="990" y2="540"/>
-    <line x1="960" y1="510" x2="960" y2="570"/>
-  </g>
+  <!-- Bottom Curve: Cyan to Blue -->
+  <!-- Ambient Glow -->
+  <path d="M-100,800 C600,650 1300,950 2100,800 L2100,950 C1300,1100 600,800 -100,950 Z" fill="url(#flowCyan)" filter="url(#softGlow)" opacity="0.6"/>
+  <!-- Crisp Core Geometric Curve -->
+  <path d="M-100,800 C600,650 1300,950 2100,800 L2100,950 C1300,1100 600,800 -100,950 Z" fill="url(#flowCyan)" opacity="0.85"/>
+  <!-- Glass Edge -->
+  <path d="M-100,830 C600,680 1300,980 2100,830" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.8"/>
 
-  <!-- 3. Colorful Shapes -->
-  <!-- Green Pill -->
-  <g transform="translate(250, 180)">
-    <rect x="0" y="0" width="360" height="180" rx="90" fill="url(#green)"/>
-    <rect x="-30" y="-30" width="420" height="240" rx="120" fill="none" stroke="#10B981" stroke-width="3" opacity="0.6"/>
-  </g>
-
-  <!-- Magenta/Blue Flowing Pill -->
-  <g transform="translate(1150, 380)">
-    <rect x="0" y="0" width="550" height="180" rx="90" fill="url(#purple)"/>
-    <circle cx="500" cy="90" r="120" fill="#F43F5E" filter="url(#blur)" opacity="0.8"/>
-  </g>
-
-  <!-- Bottom Blue Element -->
-  <g transform="translate(600, 800)">
-    <rect x="0" y="0" width="400" height="140" rx="70" fill="url(#blue)"/>
-  </g>
-
-  <!-- 4. Some Soft White Lights for Depth -->
-  <circle cx="1100" cy="200" r="250" fill="#FFFFFF" filter="url(#blur)" opacity="0.7"/>
-  <circle cx="500" cy="700" r="200" fill="#FFFFFF" filter="url(#blur)" opacity="0.6"/>
+  <!-- 3. Floating Holographic Rings for Depth -->
+  <circle cx="1500" cy="300" r="250" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.4" filter="url(#softGlow)"/>
+  <circle cx="1500" cy="300" r="250" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.6"/>
+  
+  <circle cx="400" cy="800" r="350" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.3" filter="url(#softGlow)"/>
+  <circle cx="400" cy="800" r="350" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.5"/>
 </svg>
