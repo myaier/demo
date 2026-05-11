@@ -48,51 +48,51 @@
   --text-tertiary: #636366;
   --text-quaternary: #8E8E93;
   --text-btn: #3C3C43;
-  --glass-bg: rgba(255, 255, 255, 0.5);
-  --glass-bg-input: rgba(0, 0, 0, 0.04);
-  --glass-bg-steps: rgba(0, 0, 0, 0.03);
-  --glass-bg-step-num: rgba(255, 255, 255, 1);
-  --glass-bg-hover: rgba(0, 0, 0, 0.06);
-  --glass-border-light: rgba(255, 255, 255, 0.9);
-  --glass-border-dark: rgba(0, 0, 0, 0.2);
-  --glass-border-mid: rgba(0, 0, 0, 0.15);
-  --glass-border-dim: rgba(0, 0, 0, 0.04);
+  --glass-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.85));
+  --glass-bg-input: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.7));
+  --glass-bg-steps: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.6));
+  --glass-bg-step-num: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 1));
+  --glass-bg-hover: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 1));
+  --glass-border-light: rgba(255, 255, 255, 1);
+  --glass-border-dark: rgba(0, 0, 0, 0.08);
+  --glass-border-mid: rgba(0, 0, 0, 0.06);
+  --glass-border-dim: rgba(0, 0, 0, 0.02);
   --glass-border-bright: rgba(255, 255, 255, 1);
   --glass-border-faint: rgba(255, 255, 255, 0.8);
-  --btn-primary-bg: rgba(0, 122, 255, 0.08);
-  --btn-primary-hover: rgba(0, 122, 255, 0.12);
-  --btn-primary-shadow-in: rgba(0, 122, 255, 0.25);
-  --btn-primary-shadow-out: rgba(0, 0, 0, 0.05);
-  --btn-primary-text-shadow: rgba(0, 122, 255, 0.2);
+  --btn-primary-bg: linear-gradient(135deg, rgba(0, 122, 255, 0.05), rgba(0, 122, 255, 0.15));
+  --btn-primary-hover: linear-gradient(135deg, rgba(0, 122, 255, 0.1), rgba(0, 122, 255, 0.25));
+  --btn-primary-shadow-in: rgba(0, 122, 255, 0.15);
+  --btn-primary-shadow-out: rgba(0, 122, 255, 0.1);
+  --btn-primary-text-shadow: rgba(0, 122, 255, 0.1);
   --btn-primary-active-shadow: rgba(0, 122, 255, 0.05);
   --icon-filter: invert(0) opacity(0.7);
   --bg-image: url("svg/W/bg.svg");
   --divider-bg: url("svg/W/divider.svg") no-repeat center/100% 100%;
   --step-divider-color: transparent;
-  --demo-hover: rgba(255, 255, 255, 0.8);
+  --demo-hover: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.95));
   
-  /* Big frame exact highlight match & subtle outer shadow for light mode */
+  /* Clean Shadows: crisp rims, pure glass feel */
   --glass-shadow: 
-    inset -1.5px -1.5px 0px rgba(255, 255, 255, 0.8), 
-    inset -4px -4px 16px rgba(255, 255, 255, 0.5), 
-    inset 2px 2px 12px rgba(0, 0, 0, 0.05),
-    inset 0 0 0 0.5px rgba(0, 0, 0, 0.12),
-    0 16px 40px rgba(0, 0, 0, 0.06);
+    inset -1px -1px 0px rgba(255, 255, 255, 1), 
+    inset 1px 1px 0px rgba(0, 0, 0, 0.03), 
+    inset 0 0 0 0.5px rgba(255, 255, 255, 0.5),
+    0 24px 48px rgba(0, 0, 0, 0.06),
+    0 8px 16px rgba(0, 0, 0, 0.02);
     
-  /* Inner components scaled-down highlight & subtle outer shadow */
+  /* Inner components: floating white glass */
   --element-shadow: 
     inset -1px -1px 0px rgba(255, 255, 255, 0.8),
-    inset -2px -2px 8px rgba(255, 255, 255, 0.4),
-    inset 1px 1px 6px rgba(0, 0, 0, 0.04),
-    inset 0 0 0 0.5px rgba(0, 0, 0, 0.08),
-    0 4px 12px rgba(0, 0, 0, 0.03);
+    inset 1px 1px 0px rgba(0, 0, 0, 0.02),
+    inset 0 0 0 0.5px rgba(255, 255, 255, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.03),
+    0 1px 2px rgba(0, 0, 0, 0.01);
     
   --element-shadow-hover: 
-    inset -1px -1px 0px rgba(255, 255, 255, 0.9),
-    inset -2px -2px 8px rgba(255, 255, 255, 0.6),
-    inset 2px 2px 16px rgba(0, 0, 0, 0.08),
-    inset 0 0 0 0.5px rgba(0, 0, 0, 0.15),
-    0 4px 12px rgba(0, 0, 0, 0.03);
+    inset -1px -1px 0px rgba(255, 255, 255, 1),
+    inset 1px 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0 0 0 0.5px rgba(255, 255, 255, 0.6),
+    0 6px 16px rgba(0, 0, 0, 0.05),
+    0 2px 4px rgba(0, 0, 0, 0.02);
     
   --filter-glass: url("svg/filter/W/glass.svg#l");
   --filter-highlight: url("svg/filter/W/highlight.svg#hl");
