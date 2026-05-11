@@ -5,12 +5,12 @@
   --font-body: "S";
   --apple-blue: #0a84ff;
   --apple-bg: #000000;
-  --r: 24px;
+  --r: 28px;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 body {
@@ -22,7 +22,10 @@ body {
   background: url("bg.svg") center/cover fixed;
   background-color: var(--apple-bg);
   font-family: var(--font-body);
-  font-weight: 450;
+  font-weight: 400;
+  font-style: normal;
+  font-variant-numeric: proportional-nums;
+  font-optical-sizing: auto;
   letter-spacing: 0.01em; /* 中文基础字间距 */
   color: #EBEBF5; /* visionOS强调高对比度纯净感 */
   -webkit-font-smoothing: antialiased;
@@ -88,7 +91,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding: 40px 32px;
+  padding: 48px 40px;
 }
 
 .hero {
@@ -99,7 +102,7 @@ body {
 .hero h1 {
   font-size: 34px;
   line-height: 1.25; /* 中文标题不宜过紧 */
-  font-weight: 650; /* Variable Font 可以使用 650 获得完美平衡 */
+  font-weight: 600; /* Variable Font 可以使用 600 获得完美平衡 */
   margin: 0 0 16px 0;
   letter-spacing: 0; /* 移除负字距，中文不需要负字距 */
 }
@@ -113,7 +116,7 @@ body {
   line-height: 1.6; /* 中文块需要更大的行高 */
   color: #AEAEB2;
   margin: 0;
-  font-weight: 450; /* 在深色毛玻璃上稍微加粗以提升辨识度 */
+  font-weight: 400; /* 在深色毛玻璃上稍微加粗以提升辨识度 */
   letter-spacing: 0.01em;
 }
 
@@ -121,7 +124,7 @@ body {
   position: relative;
   background: rgba(255, 255, 255, 0.04);
   border-radius: var(--r);
-  padding: 16px;
+  padding: 16px 24px;
   cursor: text;
   min-height: 56px;
   box-sizing: border-box;
@@ -131,7 +134,7 @@ body {
 }
 
 .input-group.has-value {
-  padding: 24px 16px 8px;
+  padding: 24px 24px 8px;
   align-items: flex-end;
 }
 
@@ -155,12 +158,12 @@ body {
 
 .input-group label {
   position: absolute;
-  left: 16px;
+  left: 24px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 17px;
   color: #636366; /* 稍微提升亮度 */
-  font-weight: 450;
+  font-weight: 400;
   letter-spacing: 0.01em;
   pointer-events: none;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -173,7 +176,7 @@ body {
   transform: translateY(0);
   font-size: 12px;
   color: #8E8E93;
-  font-weight: 550;
+  font-weight: 500;
   letter-spacing: 0.02em; /* 小字号需要微量正字距 */
 }
 
@@ -182,7 +185,7 @@ body {
   border: none;
   color: #EBEBF5;
   font-size: 17px;
-  font-weight: 500;
+  font-weight: 450;
   letter-spacing: 0.01em;
   width: 100%;
   outline: none;
@@ -242,10 +245,10 @@ body {
   width: 100%;
   min-height: 56px;
   box-sizing: border-box;
-  padding: 0 16px;
+  padding: 0 24px;
   border-radius: var(--r);
   font-size: 17px;
-  font-weight: 650;
+  font-weight: 600;
   letter-spacing: 0.02em; /* 按钮文字更舒展 */
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.15, 1, 0.3, 1);
@@ -319,11 +322,11 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 16px;
+  padding: 16px 24px;
   border-radius: var(--r);
   text-decoration: none;
   font-size: 17px;
-  font-weight: 550;
+  font-weight: 500;
   letter-spacing: 0.01em;
   transition: all 0.2s ease;
 }
@@ -343,7 +346,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 20px;
+  padding: 20px 24px;
   border-radius: var(--r);
   background: rgba(255, 255, 255, 0.03);
   position: relative;
@@ -377,7 +380,7 @@ body {
 .step-info h3 {
   margin: 0;
   font-size: 17px;
-  font-weight: 650;
+  font-weight: 600;
   letter-spacing: 0;
   color: #EBEBF5;
 }
@@ -385,7 +388,7 @@ body {
 .step-info p {
   margin: 0;
   font-size: 15px;
-  font-weight: 450;
+  font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.5;
   color: #8E8E93;
@@ -400,7 +403,7 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 15px;
-  font-weight: 650;
+  font-weight: 600;
   letter-spacing: 0;
   color: #D1D1D6;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
@@ -427,9 +430,9 @@ body {
   --r: 22px;
   border-radius: var(--r);
   height: 44px;
-  padding: 0 20px;
+  padding: 0 24px;
   font-size: 17px;
-  font-weight: 650;
+  font-weight: 600;
   letter-spacing: 0.02em;
   color: #EBEBF5;
   display: flex;
