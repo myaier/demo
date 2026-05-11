@@ -2,7 +2,10 @@ const i18n = {
   zh: {
     title: "TalkTo.Me - AI接待",
     hero_title: "让 <span class=\"highlight\">AI</span> 替您<br />接待每一位来访者",
-    hero_desc: "创建个人专属链接，智能体按您设定的规则和访客沟通、索取信息，消除无效交流",
+    hero_desc: "访客通过你的专属页面发起对话，AI 全天候在线接待，把真正重要的消息实时转达给你。",
+    tag_1: "24h 全天候",
+    tag_2: "实时转达",
+    tag_3: "专属页面",
     email_label: "邮箱地址",
     btn_register: "注册 / 登录",
     demo_link: "点此体验演示 <span style=\"font-size: 18px; margin-left: 4px\">›</span>",
@@ -16,7 +19,10 @@ const i18n = {
   en: {
     title: "TalkTo.Me - AI Receptionist",
     hero_title: "Let <span class=\"highlight\">AI</span> receive<br />every visitor for you",
-    hero_desc: "Create your personal link. The agent communicates with visitors and gathers information based on your rules, eliminating ineffective chats.",
+    hero_desc: "Visitors initiate conversations through your exclusive page, AI provides 24/7 reception, and forwards truly important messages to you in real-time.",
+    tag_1: "24/7 Online",
+    tag_2: "Real-time Forward",
+    tag_3: "Exclusive Page",
     email_label: "Email Address",
     btn_register: "Register / Login",
     demo_link: "Try Demo <span style=\"font-size: 18px; margin-left: 4px\">›</span>",

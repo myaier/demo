@@ -172,12 +172,43 @@ body {
 }
 
 .hero p {
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.6; /* 中文块需要更大的行高 */
   color: var(--text-secondary);
   margin: 0;
-  font-weight: 400; /* 在深色毛玻璃上稍微加粗以提升辨识度 */
+  font-weight: 450; /* 在深色毛玻璃上稍微加粗以提升辨识度 */
   letter-spacing: 0.01em;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.hero-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border-dim);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+  background: var(--glass-bg-hover);
+  box-shadow: inset 1px 1px 0 var(--glass-border-faint);
+}
+
+.tag-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--apple-blue);
+  box-shadow: 0 0 6px var(--btn-primary-shadow-in);
 }
 
 .input-group {
