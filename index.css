@@ -1,5 +1,10 @@
 @import url("Sf/merge/woff2/result.css");
 
+b {
+  display: block;
+  font-weight: inherit;
+}
+
 :root {
   --font-heading: "S";
   --font-body: "S";
@@ -35,7 +40,8 @@
   --step-divider-color: transparent;
   --demo-hover: rgba(255, 255, 255, 0.08);
   --glass-shadow: inset -4px -4px 16px rgba(0, 0, 0, 0.4), inset 0 0 0 0.5px rgba(255, 255, 255, 0.05);
-  --element-shadow: inset -2px -2px 8px rgba(0, 0, 0, 0.2), inset 0 0 0 0.5px rgba(255, 255, 255, 0.05);
+  --element-shadow: inset 2px -2px 8px rgba(0, 0, 0, 0.15), inset -2px -2px 8px rgba(0, 0, 0, 0.15), inset 0 0 0 0.5px rgba(255, 255, 255, 0.05);
+  --input-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.3), inset 0 -1px 2px rgba(255, 255, 255, 0.05), inset 0 0 0 0.5px rgba(255, 255, 255, 0.05);
   --element-shadow-hover: inset -2px -2px 12px rgba(0, 0, 0, 0.3), inset 0 0 0 0.5px rgba(255, 255, 255, 0.1);
   --filter-glass: url("svg/filter/B/glass.svg#l");
   --filter-highlight: url("svg/filter/B/highlight.svg#hl");
@@ -50,19 +56,19 @@
   --text-quaternary: #8E8E93;
   --text-btn: #3C3C43;
   --glass-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.45));
-  --glass-bg-input: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5));
-  --glass-bg-steps: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.4));
+  --glass-bg-input: linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.45));
+  --glass-bg-steps: linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.35));
   --glass-bg-step-num: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 1));
   --glass-bg-hover: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 1));
   --glass-border-light: rgba(0, 0, 0, 0.06);
   --glass-border-dark: rgba(0, 0, 0, 0.08);
-  --glass-border-mid: rgba(255, 255, 255, 1);
+  --glass-border-mid: rgba(0, 0, 0, 0.15);
   --glass-border-dim: rgba(0, 0, 0, 0.02);
-  --glass-border-bright: rgba(255, 255, 255, 1);
-  --glass-border-faint: rgba(255, 255, 255, 0.8);
-  --btn-primary-bg: linear-gradient(135deg, rgba(0, 122, 255, 0.05), rgba(0, 122, 255, 0.15));
-  --btn-primary-hover: linear-gradient(135deg, rgba(0, 122, 255, 0.1), rgba(0, 122, 255, 0.25));
-  --btn-primary-shadow: inset 0px 4px 12px rgba(255,255,255,0.3), var(--element-shadow);
+  --glass-border-bright: rgba(0, 0, 0, 0.25);
+  --glass-border-faint: rgba(0, 0, 0, 0.08);
+  --btn-primary-bg: linear-gradient(180deg, rgba(0, 122, 255, 0.1), rgba(0, 122, 255, 0.15));
+  --btn-primary-hover: linear-gradient(180deg, rgba(0, 122, 255, 0.15), rgba(0, 122, 255, 0.25));
+  --btn-primary-shadow: inset 0px 4px 12px rgba(255,255,255,0.4), inset 2px -2px 6px rgba(0,0,0,0.05), inset -2px -2px 6px rgba(0,0,0,0.05), inset 0 0 0 0.5px rgba(255,255,255,0.5);
   --btn-primary-shadow-in: rgba(0, 122, 255, 0.15);
   --btn-primary-shadow-out: rgba(0, 122, 255, 0.1);
   --btn-primary-text-shadow: rgba(0, 122, 255, 0.1);
@@ -75,26 +81,27 @@
   
   /* Clean Shadows: crisp rims, pure glass feel */
   --glass-shadow: 
-    inset 1px 1px 0px rgba(255, 255, 255, 1), 
-    inset -1px -1px 0px rgba(0, 0, 0, 0.03), 
-    inset 0 0 0 0.5px rgba(255, 255, 255, 0.5),
-    0 24px 48px rgba(0, 0, 0, 0.06),
-    0 8px 16px rgba(0, 0, 0, 0.02);
+    inset 1px 1px 6px rgba(255, 255, 255, 0.8), 
+    inset -2px -2px 8px rgba(0, 0, 0, 0.04), 
+    inset 0 0 0 0.5px rgba(255, 255, 255, 0.5);
     
   /* Inner components: floating white glass */
   --element-shadow: 
-    inset 1px 1px 0px rgba(255, 255, 255, 0.8),
-    inset -1px -1px 0px rgba(0, 0, 0, 0.02),
-    inset 0 0 0 0.5px rgba(255, 255, 255, 0.4),
-    0 4px 12px rgba(0, 0, 0, 0.03),
-    0 1px 2px rgba(0, 0, 0, 0.01);
+    inset 0px 2px 4px rgba(255, 255, 255, 0.8),
+    inset 2px -2px 4px rgba(0, 0, 0, 0.03),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.03),
+    inset 0 0 0 0.5px rgba(255, 255, 255, 0.4);
+    
+  /* Inputs: sunken/debossed glass (hole) */
+  --input-shadow: 
+    inset 0px 4px 8px rgba(0, 0, 0, 0.08),
+    inset 0px -2px 4px rgba(255, 255, 255, 0.8),
+    inset 0 0 0 0.5px rgba(0, 0, 0, 0.05);
     
   --element-shadow-hover: 
-    inset 1px 1px 0px rgba(255, 255, 255, 1),
-    inset -1px -1px 2px rgba(0, 0, 0, 0.05),
-    inset 0 0 0 0.5px rgba(255, 255, 255, 0.6),
-    0 6px 16px rgba(0, 0, 0, 0.05),
-    0 2px 4px rgba(0, 0, 0, 0.02);
+    inset 1px 1px 6px rgba(255, 255, 255, 1),
+    inset -2px -2px 6px rgba(0, 0, 0, 0.06),
+    inset 0 0 0 0.5px rgba(255, 255, 255, 0.6);
     
   --filter-glass: url("svg/filter/W/glass.svg#l");
   --filter-highlight: url("svg/filter/W/highlight.svg#hl");
@@ -109,6 +116,7 @@ body {
   margin: 0;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   background: var(--bg-image) center/cover fixed;
   background-color: var(--apple-bg);
   font-family: var(--font-body);
@@ -156,9 +164,8 @@ body {
   
   border: 0.5px solid transparent;
   background-image: linear-gradient(
-    135deg,
+    180deg,
     var(--glass-border-mid),
-    transparent 40%,
     var(--glass-border-light)
   );
   background-origin: border-box;
@@ -172,7 +179,7 @@ body {
   mask-composite: exclude;
 }
 
-.main-container {
+.main {
   margin: auto;
   width: 100%;
   max-width: 480px;
@@ -208,7 +215,7 @@ body {
   letter-spacing: 0.01em;
 }
 
-.hero-tags {
+.tags {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -216,7 +223,7 @@ body {
   margin-bottom: 8px;
 }
 
-.hero-tag {
+.tag {
   display: flex;
   align-items: center;
   padding: 6px 14px;
@@ -231,11 +238,11 @@ body {
       box-shadow: var(--element-shadow);
 }
 
-[data-theme="light"] .hero-tag {
+[data-theme="light"] .tag {
   box-shadow: inset 0 0 3px rgba(0,0,0,.2);
 }
 
-.hero-tag::after {
+.tag::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -245,9 +252,8 @@ body {
   
   border: 0.5px solid transparent;
   background-image: linear-gradient(
-    135deg,
+    180deg,
     var(--glass-border-mid),
-    transparent 40%,
     var(--glass-border-light)
   );
   background-origin: border-box;
@@ -261,7 +267,7 @@ body {
   mask-composite: exclude;
 }
 
-.input-group {
+.field {
   position: relative;
   z-index: 1;
   border-radius: var(--r);
@@ -272,10 +278,10 @@ body {
   display: flex;
   align-items: center;
   transition: padding 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: var(--element-shadow);
+  box-shadow: var(--input-shadow);
 }
 
-.input-group::before {
+.field::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -287,12 +293,12 @@ body {
   filter: var(--filter-highlight);
 }
 
-.input-group.has-value {
+.field.has-value {
   padding: 24px 28px 8px;
   align-items: flex-end;
 }
 
-.input-group::after {
+.field::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -302,9 +308,8 @@ body {
   
   border: 0.5px solid transparent;
   background-image: linear-gradient(
-    135deg,
+    180deg,
     var(--glass-border-mid),
-    transparent 40%,
     var(--glass-border-light)
   );
   background-origin: border-box;
@@ -318,7 +323,7 @@ body {
   mask-composite: exclude;
 }
 
-.input-group label {
+.field label {
   position: absolute;
   left: 28px;
   top: 50%;
@@ -333,7 +338,7 @@ body {
 }
 
 /* Label floats up only when input has value */
-.input-group.has-value label {
+.field.has-value label {
   top: 8px;
   transform: translateY(0);
   font-size: 12px;
@@ -342,7 +347,7 @@ body {
   letter-spacing: 0.02em; /* 小字号需要微量正字距 */
 }
 
-.input-group input {
+.field input {
   background: transparent;
   border: none;
   color: var(--text-primary);
@@ -356,7 +361,7 @@ body {
 }
 
 /* 通用 Liquid Glass 按钮 (白框/浅底) */
-.LG-btn {
+.btn {
   background: var(--glass-bg-input);
   position: relative;
   z-index: 1;
@@ -365,10 +370,10 @@ body {
   box-shadow: var(--element-shadow);
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.LG-btn:hover {
+.btn:hover {
   box-shadow: var(--element-shadow-hover);
 }
-.LG-btn::before {
+.btn::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -377,7 +382,7 @@ body {
   clip-path: inset(0 round var(--r));
   backdrop-filter: blur(12px) var(--filter-glass);
 }
-.LG-btn::after {
+.btn::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -387,9 +392,8 @@ body {
   
   border: 0.5px solid transparent;
   background-image: linear-gradient(
-    135deg,
+    180deg,
     var(--glass-border-mid),
-    transparent 40%,
     var(--glass-border-light)
   );
   background-origin: border-box;
@@ -404,7 +408,7 @@ body {
 }
 
 /* 主按钮 (强调蓝) */
-.btn-primary {
+.primary {
   width: 100%;
   min-height: 56px;
   box-sizing: border-box;
@@ -426,7 +430,7 @@ body {
   box-shadow: var(--btn-primary-shadow);
 }
 
-.btn-primary::before {
+.primary::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -436,7 +440,7 @@ body {
   backdrop-filter: blur(12px) var(--filter-glass);
 }
 
-.btn-primary::after {
+.primary::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -446,11 +450,9 @@ body {
   
   border: 0.5px solid transparent;
   background-image: linear-gradient(
-    90deg,
+    180deg,
     var(--glass-border-mid),
-    transparent 15%,
-    transparent 85%,
-    var(--glass-border-mid)
+    var(--glass-border-light)
   );
   background-origin: border-box;
   background-clip: border-box;
@@ -463,7 +465,7 @@ body {
   mask-composite: exclude;
 }
 
-.btn-primary:hover {
+.primary:hover {
   background: var(--btn-primary-hover);
   transform: translateY(-1px);
   box-shadow:
@@ -472,14 +474,14 @@ body {
   text-shadow: 0 0 12px var(--btn-primary-text-shadow);
 }
 
-.btn-primary:active {
+.primary:active {
   transform: scale(0.975) translateY(0);
   transition: 0.1s;
   box-shadow: inset 0 0 8px var(--btn-primary-active-shadow);
 }
 
 /* 演示链接 (次要) */
-.demo-link {
+.demo {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -493,7 +495,7 @@ body {
   transition: all 0.2s ease;
 }
 
-.demo-link:hover {
+.demo:hover {
   background: var(--demo-hover);
   box-shadow: var(--element-shadow-hover);
 }
@@ -529,9 +531,8 @@ body {
   
   border: 0.5px solid transparent;
   background-image: linear-gradient(
-    135deg,
+    180deg,
     var(--glass-border-mid),
-    transparent 40%,
     var(--glass-border-light)
   );
   background-origin: border-box;
@@ -545,7 +546,7 @@ body {
   mask-composite: exclude;
 }
 
-.step-card {
+.step {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -553,7 +554,7 @@ body {
   position: relative;
 }
 
-.step-card:not(:last-child)::after {
+.step:not(:last-child)::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -564,13 +565,13 @@ body {
   background-color: var(--step-divider-color);
 }
 
-.step-info {
+.info {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
-.step-info h3 {
+.info h3 {
   margin: 0;
   font-size: 17px;
   font-weight: 600;
@@ -578,7 +579,7 @@ body {
   color: var(--text-primary);
 }
 
-.step-info p {
+.info p {
   margin: 0;
   font-size: 15px;
   font-weight: 400;
@@ -587,7 +588,7 @@ body {
   color: var(--text-quaternary);
 }
 
-.step-number {
+.num {
   width: 32px;
   height: 32px;
   border-radius: 16px;
@@ -607,7 +608,7 @@ body {
       box-shadow: var(--element-shadow);
 }
 
-.step-number::after {
+.num::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -617,9 +618,8 @@ body {
   
   border: 0.5px solid transparent;
   background-image: linear-gradient(
-    135deg,
+    180deg,
     var(--glass-border-mid),
-    transparent 40%,
     var(--glass-border-light)
   );
   background-origin: border-box;
@@ -634,7 +634,7 @@ body {
 }
 
 /* 顶部导航 */
-.top-nav {
+.nav {
   position: fixed;
   top: 24px;
   left: 24px;
@@ -645,11 +645,11 @@ body {
   z-index: 100;
   pointer-events: none; /* 让中间透传点击 */
 }
-.top-nav > * {
+.nav > * {
   pointer-events: auto;
 }
 
-.logo-pill {
+.logo {
   --r: 22px;
   border-radius: var(--r);
   height: 44px;
@@ -663,12 +663,12 @@ body {
   justify-content: center;
 }
 
-.nav-actions {
+.actions {
   display: flex;
   gap: 12px;
 }
 
-.icon-btn {
+.icon {
   --r: 22px;
   width: 44px;
   height: 44px;
@@ -680,8 +680,18 @@ body {
   cursor: pointer;
 }
 
-.icon-btn img {
+.icon img {
   width: 20px;
   height: 20px;
   filter: var(--icon-filter);
+}
+
+/* --- 响应式布局：桌面端 --- */
+@media (min-width: 900px) {
+  body {
+    /* 桌面端宽度充裕，两侧 fixed 按钮不会遮挡主体。
+       通过设置 padding-top: 24px，结合 body 的 flex column，
+       当主体超高溢出时，其顶部会安全停靠在 24px 处，从而与 top: 24px 的 fixed 导航按钮完美平齐！ */
+    padding: 24px 48px;
+  }
 }

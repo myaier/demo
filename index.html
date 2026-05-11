@@ -8,60 +8,60 @@
     <script src="lang.js" defer></script>
   </head>
   <body>
-    <nav class="top-nav">
-      <div class="logo-pill LG-btn">TalkTo.Me</div>
-      <div class="nav-actions">
-        <button class="icon-btn LG-btn" id="theme-toggle"><img src="svg/sun.svg" alt="Theme" /></button>
-        <button class="icon-btn LG-btn" id="lang-toggle"><img src="svg/lang.svg" alt="Language" /></button>
-        <button class="icon-btn LG-btn"><img src="svg/menu.svg" alt="Menu" /></button>
-      </div>
+    <nav class="nav">
+      <b class="logo btn">TalkTo.Me</b>
+      <b class="actions">
+        <button class="icon btn" id="theme-toggle"><img src="svg/sun.svg" alt="Theme" /></button>
+        <button class="icon btn" id="lang-toggle"><img src="svg/lang.svg" alt="Language" /></button>
+        <button class="icon btn"><img src="svg/menu.svg" alt="Menu" /></button>
+      </b>
     </nav>
-    <div class="LG main-container">
-      <div class="hero">
+    <main class="LG main">
+      <b class="hero">
         <h1 data-i18n="hero_title">让 <span class="highlight">AI</span> 替您<br />接待每一位来访者</h1>
         <p data-i18n="hero_desc">访客通过你的专属页面发起对话，AI 全天候在线接待，把真正重要的消息实时转达给你。</p>
-        <div class="hero-tags">
-          <div class="hero-tag"><span data-i18n="tag_1">24h 全天候</span></div>
-          <div class="hero-tag"><span data-i18n="tag_2">实时转达</span></div>
-          <div class="hero-tag"><span data-i18n="tag_3">专属页面</span></div>
-        </div>
-      </div>
+        <b class="tags">
+          <b class="tag"><span data-i18n="tag_1">24h 全天候</span></b>
+          <b class="tag"><span data-i18n="tag_2">实时转达</span></b>
+          <b class="tag"><span data-i18n="tag_3">专属页面</span></b>
+        </b>
+      </b>
 
-      <div class="input-group" id="email-group">
+      <b class="field" id="email-group">
         <label for="email-input" data-i18n="email_label">邮箱地址</label>
         <input id="email-input" type="email" autofocus />
-      </div>
+      </b>
 
-      <button class="btn-primary" data-i18n="btn_register">注册 / 登录</button>
+      <button class="primary" data-i18n="btn_register">注册 / 登录</button>
 
-      <a href="#" class="demo-link LG-btn" data-i18n="demo_link"
+      <a href="#" class="demo btn" data-i18n="demo_link"
         >点此体验演示 <span style="font-size: 18px; margin-left: 4px">›</span></a
       >
 
-      <div class="steps">
-        <div class="step-card">
-          <div class="step-info">
+      <b class="steps">
+        <b class="step">
+          <b class="info">
             <h3 data-i18n="step1_title">创建链接</h3>
             <p data-i18n="step1_desc">注册后即得 yourname.talkto.me</p>
-          </div>
-          <div class="step-number"><img src="svg/link.svg" style="width: 13px; height: 13px; filter: var(--icon-filter);" /></div>
-        </div>
-        <div class="step-card">
-          <div class="step-info">
+          </b>
+          <b class="num"><img src="svg/link.svg" style="width: 13px; height: 13px; filter: var(--icon-filter);" /></b>
+        </b>
+        <b class="step">
+          <b class="info">
             <h3 data-i18n="step2_title">配置规则</h3>
             <p data-i18n="step2_desc">告诉智能体如何代表你接待访客</p>
-          </div>
-          <div class="step-number"><img src="svg/settings.svg" style="width: 13px; height: 13px; filter: var(--icon-filter);" /></div>
-        </div>
-        <div class="step-card">
-          <div class="step-info">
+          </b>
+          <b class="num"><img src="svg/settings.svg" style="width: 13px; height: 13px; filter: var(--icon-filter);" /></b>
+        </b>
+        <b class="step">
+          <b class="info">
             <h3 data-i18n="step3_title">绑定推送</h3>
             <p data-i18n="step3_desc">重要对话实时推送到你的聊天工具</p>
-          </div>
-          <div class="step-number"><img src="svg/bell.svg" style="width: 13px; height: 13px; filter: var(--icon-filter);" /></div>
-        </div>
-      </div>
-    </div>
+          </b>
+          <b class="num"><img src="svg/bell.svg" style="width: 13px; height: 13px; filter: var(--icon-filter);" /></b>
+        </b>
+      </b>
+    </main>
     <script>
       const inp = document.getElementById("email-input");
       const grp = document.getElementById("email-group");
