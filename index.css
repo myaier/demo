@@ -6,6 +6,67 @@
   --apple-blue: #0a84ff;
   --apple-bg: #000000;
   --r: 28px;
+  --text-primary: #EBEBF5;
+  --text-secondary: #AEAEB2;
+  --text-tertiary: #636366;
+  --text-quaternary: #8E8E93;
+  --text-btn: #D1D1D6;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-bg-input: rgba(255, 255, 255, 0.04);
+  --glass-bg-steps: rgba(255, 255, 255, 0.02);
+  --glass-bg-step-num: rgba(255, 255, 255, 0.06);
+  --glass-bg-hover: rgba(255, 255, 255, 0.08);
+  --glass-border-light: rgba(255, 255, 255, 0.2);
+  --glass-border-dark: rgba(255, 255, 255, 0.05);
+  --glass-border-mid: rgba(255, 255, 255, 0.4);
+  --glass-border-dim: rgba(255, 255, 255, 0.1);
+  --glass-border-bright: rgba(255, 255, 255, 0.3);
+  --glass-border-faint: rgba(255, 255, 255, 0.08);
+  --btn-primary-bg: rgba(10, 132, 255, 0.05);
+  --btn-primary-hover: rgba(10, 132, 255, 0.12);
+  --btn-primary-shadow-in: rgba(10, 132, 255, 0.25);
+  --btn-primary-shadow-out: rgba(0, 0, 0, 0.3);
+  --btn-primary-text-shadow: rgba(10, 132, 255, 0.5);
+  --btn-primary-active-shadow: rgba(10, 132, 255, 0.15);
+  --icon-filter: invert(1) opacity(0.85);
+  --bg-image: url("svg/bgB.svg");
+  --divider-bg: url("svg/divider.svg") no-repeat center/100% 100%;
+  --step-divider-color: transparent;
+  --demo-hover: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="light"] {
+  --apple-blue: #007aff;
+  --apple-bg: #F2F2F7;
+  --text-primary: #000000;
+  --text-secondary: #3C3C43;
+  --text-tertiary: #636366;
+  --text-quaternary: #8E8E93;
+  --text-btn: #3C3C43;
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-bg-input: rgba(255, 255, 255, 0.75);
+  --glass-bg-steps: rgba(255, 255, 255, 0.5);
+  --glass-bg-step-num: rgba(255, 255, 255, 0.8);
+  --glass-bg-hover: rgba(255, 255, 255, 0.9);
+  --glass-border-light: rgba(255, 255, 255, 1);
+  --glass-border-dark: rgba(0, 0, 0, 0.04);
+  --glass-border-mid: rgba(255, 255, 255, 1);
+  --glass-border-dim: rgba(0, 0, 0, 0.02);
+  --glass-border-bright: rgba(255, 255, 255, 1);
+  --glass-border-faint: rgba(0, 0, 0, 0.02);
+  --btn-primary-bg: rgba(0, 122, 255, 0.1);
+  --btn-primary-hover: rgba(0, 122, 255, 0.15);
+  --btn-primary-shadow-in: rgba(0, 122, 255, 0.1);
+  --btn-primary-shadow-out: rgba(0, 0, 0, 0.05);
+  --btn-primary-text-shadow: rgba(0, 122, 255, 0.2);
+  --btn-primary-active-shadow: rgba(0, 122, 255, 0.05);
+  --icon-filter: invert(0) opacity(0.7);
+  --bg-image: url("svg/bgW.svg");
+  --divider-bg: none;
+  --step-divider-color: rgba(0, 0, 0, 0.06);
+  --demo-hover: rgba(255, 255, 255, 0.8);
+  --glass-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -17,7 +78,7 @@ body {
   margin: 0;
   min-height: 100vh;
   display: flex;
-  background: url("bg.svg") center/cover fixed;
+  background: var(--bg-image) center/cover fixed;
   background-color: var(--apple-bg);
   font-family: var(--font-body);
   font-weight: 400;
@@ -25,7 +86,7 @@ body {
   font-variant-numeric: proportional-nums;
   font-optical-sizing: auto;
   letter-spacing: 0.01em; /* 中文基础字间距 */
-  color: #EBEBF5; /* visionOS强调高对比度纯净感 */
+  color: var(--text-primary); /* visionOS强调高对比度纯净感 */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -36,11 +97,11 @@ body {
 
 /* 核心 Liquid Glass 类 (恢复最开始的 SVG 排列与精细边框) */
 .LG {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--glass-bg);
   border-radius: 48px; /* 调整为更大的类Squircle圆角 */
   position: relative;
   z-index: 1;
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--glass-shadow);
 }
 
 .LG::before {
@@ -51,7 +112,7 @@ body {
   border-radius: inherit;
   clip-path: inset(0 round 48px);
   backdrop-filter: blur(16px)
-    url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="l" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="40"/></filter></svg>#l');
+    url("svg/filter/glass.svg#l");
 }
 
 .LG::after {
@@ -62,15 +123,15 @@ body {
   border-radius: inherit;
   pointer-events: none;
   box-shadow:
-    inset 1px 1px 0px rgba(255, 255, 255, 0.2),
-    inset -1px -1px 0px rgba(255, 255, 255, 0.05),
-    inset 2px 2px 12px rgba(255, 255, 255, 0.05);
+    inset 1px 1px 0px var(--glass-border-light),
+    inset -1px -1px 0px var(--glass-border-dark),
+    inset 2px 2px 12px var(--glass-border-dark);
   border: 0.5px solid transparent;
   background-image: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.2),
+    var(--glass-border-light),
     transparent 40%,
-    rgba(255, 255, 255, 0.05)
+    var(--glass-border-dark)
   );
   background-origin: border-box;
   background-clip: border-box;
@@ -107,13 +168,13 @@ body {
 }
 
 .hero .highlight {
-  color: #EBEBF5;
+  color: var(--text-primary);
 }
 
 .hero p {
   font-size: 17px;
   line-height: 1.6; /* 中文块需要更大的行高 */
-  color: #AEAEB2;
+  color: var(--text-secondary);
   margin: 0;
   font-weight: 400; /* 在深色毛玻璃上稍微加粗以提升辨识度 */
   letter-spacing: 0.01em;
@@ -122,7 +183,6 @@ body {
 .input-group {
   position: relative;
   z-index: 1;
-  background: rgba(255, 255, 255, 0.04);
   border-radius: var(--r);
   padding: 16px 28px;
   cursor: text;
@@ -131,6 +191,18 @@ body {
   display: flex;
   align-items: center;
   transition: padding 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-group::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--glass-bg-input);
+  backdrop-filter: blur(16px) url("svg/filter/glass.svg#l");
+  /* Liquid Glass 动态高光滤镜 */
+  filter: url("svg/filter/highlight.svg#hl");
 }
 
 .input-group.has-value {
@@ -145,16 +217,12 @@ body {
   z-index: -1;
   border-radius: inherit;
   pointer-events: none;
-  box-shadow:
-    inset 1px 1px 0px rgba(255, 255, 255, 0.3),
-    inset -1px -1px 0px rgba(255, 255, 255, 0.1),
-    inset 2px 2px 8px 1px rgba(255, 255, 255, 0.08);
   border: 0.5px solid transparent;
   background-image: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.4),
+    315deg,
+    rgba(255, 255, 255, 0.3),
     transparent 50%,
-    rgba(255, 255, 255, 0.1)
+    rgba(255, 255, 255, 0.05)
   );
   background-origin: border-box;
   background-clip: border-box;
@@ -173,7 +241,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   font-size: 17px;
-  color: #636366; /* 稍微提升亮度 */
+  color: var(--text-tertiary); /* 稍微提升亮度 */
   font-weight: 400;
   letter-spacing: 0.01em;
   pointer-events: none;
@@ -186,7 +254,7 @@ body {
   top: 8px;
   transform: translateY(0);
   font-size: 12px;
-  color: #8E8E93;
+  color: var(--text-quaternary);
   font-weight: 500;
   letter-spacing: 0.02em; /* 小字号需要微量正字距 */
 }
@@ -194,7 +262,7 @@ body {
 .input-group input {
   background: transparent;
   border: none;
-  color: #EBEBF5;
+  color: var(--text-primary);
   font-size: 17px;
   font-weight: 450;
   letter-spacing: 0.01em;
@@ -206,11 +274,11 @@ body {
 
 /* 通用 Liquid Glass 按钮 (白框/浅底) */
 .LG-btn {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--glass-bg-input);
   position: relative;
   z-index: 1;
   border: none;
-  color: #D1D1D6;
+  color: var(--text-btn);
 }
 .LG-btn::before {
   content: "";
@@ -220,7 +288,7 @@ body {
   border-radius: inherit;
   clip-path: inset(0 round var(--r));
   backdrop-filter: blur(12px)
-    url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="l" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="40"/></filter></svg>#l');
+    url("svg/filter/glass.svg#l");
 }
 .LG-btn::after {
   content: "";
@@ -230,15 +298,15 @@ body {
   border-radius: inherit;
   pointer-events: none;
   box-shadow:
-    inset 1px 1px 0px rgba(255, 255, 255, 0.3),
-    inset -1px -1px 0px rgba(255, 255, 255, 0.1),
-    inset 2px 2px 8px 1px rgba(255, 255, 255, 0.08);
+    inset 1px 1px 0px var(--glass-border-bright),
+    inset -1px -1px 0px var(--glass-border-dim),
+    inset 2px 2px 8px 1px var(--glass-border-faint);
   border: 0.5px solid transparent;
   background-image: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.4),
+    var(--glass-border-mid),
     transparent 50%,
-    rgba(255, 255, 255, 0.1)
+    var(--glass-border-dim)
   );
   background-origin: border-box;
   background-clip: border-box;
@@ -263,7 +331,7 @@ body {
   letter-spacing: 0.02em; /* 按钮文字更舒展 */
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.15, 1, 0.3, 1);
-  background: rgba(10, 132, 255, 0.05);
+  background: var(--btn-primary-bg);
   color: var(--apple-blue);
   border: none;
   position: relative;
@@ -281,7 +349,7 @@ body {
   border-radius: inherit;
   clip-path: inset(0 round var(--r));
   backdrop-filter: blur(12px)
-    url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="l" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="40"/></filter></svg>#l');
+    url("svg/filter/glass.svg#l");
 }
 
 .btn-primary::after {
@@ -313,18 +381,18 @@ body {
 }
 
 .btn-primary:hover {
-  background: rgba(10, 132, 255, 0.12);
+  background: var(--btn-primary-hover);
   transform: translateY(-1px);
   box-shadow:
-    inset 0 0 24px rgba(10, 132, 255, 0.25),
-    inset 0 8px 32px rgba(0, 0, 0, 0.3);
-  text-shadow: 0 0 12px rgba(10, 132, 255, 0.5);
+    inset 0 0 24px var(--btn-primary-shadow-in),
+    inset 0 8px 32px var(--btn-primary-shadow-out);
+  text-shadow: 0 0 12px var(--btn-primary-text-shadow);
 }
 
 .btn-primary:active {
   transform: scale(0.975) translateY(0);
   transition: 0.1s;
-  box-shadow: inset 0 0 8px rgba(10, 132, 255, 0.15);
+  box-shadow: inset 0 0 8px var(--btn-primary-active-shadow);
 }
 
 /* 演示链接 (次要) */
@@ -343,14 +411,14 @@ body {
 }
 
 .demo-link:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--demo-hover);
 }
 
 .steps {
   display: flex;
   flex-direction: column;
   margin-top: 8px;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--glass-bg-steps);
   border-radius: var(--r);
   position: relative;
 }
@@ -363,9 +431,10 @@ body {
   pointer-events: none;
   padding: 1px;
   background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.08) 0%,
-    rgba(255, 255, 255, 0.01) 100%
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.02) 100%
   );
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
@@ -391,7 +460,8 @@ body {
   left: 0;
   right: 0;
   height: 1px;
-  background: url("divider.svg") no-repeat center/100% 100%;
+  background: var(--divider-bg);
+  background-color: var(--step-divider-color);
 }
 
 .step-info {
@@ -405,7 +475,7 @@ body {
   font-size: 17px;
   font-weight: 600;
   letter-spacing: 0;
-  color: #EBEBF5;
+  color: var(--text-primary);
 }
 
 .step-info p {
@@ -414,22 +484,22 @@ body {
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.5;
-  color: #8E8E93;
+  color: var(--text-quaternary);
 }
 
 .step-number {
   width: 32px;
   height: 32px;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--glass-bg-step-num);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 0;
-  color: #D1D1D6;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  color: var(--text-btn);
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.15), inset -1px -1px 0 rgba(0, 0, 0, 0.1);
   flex-shrink: 0;
   user-select: none;
   -webkit-user-select: none;
@@ -459,7 +529,7 @@ body {
   font-size: 17px;
   font-weight: 600;
   letter-spacing: 0.02em;
-  color: #EBEBF5;
+  color: var(--text-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -485,5 +555,5 @@ body {
 .icon-btn img {
   width: 20px;
   height: 20px;
-  filter: invert(1) opacity(0.85);
+  filter: var(--icon-filter);
 }

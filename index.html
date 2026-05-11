@@ -11,8 +11,9 @@
     <nav class="top-nav">
       <div class="logo-pill LG-btn">TalkTo.Me</div>
       <div class="nav-actions">
-        <button class="icon-btn LG-btn" id="lang-toggle"><img src="lang.svg" alt="Language" /></button>
-        <button class="icon-btn LG-btn"><img src="menu.svg" alt="Menu" /></button>
+        <button class="icon-btn LG-btn" id="theme-toggle"><img src="svg/sun.svg" alt="Theme" /></button>
+        <button class="icon-btn LG-btn" id="lang-toggle"><img src="svg/lang.svg" alt="Language" /></button>
+        <button class="icon-btn LG-btn"><img src="svg/menu.svg" alt="Menu" /></button>
       </div>
     </nav>
     <div class="LG main-container">
@@ -61,6 +62,30 @@
       const grp = document.getElementById("email-group");
       inp.addEventListener("input", () => {
         grp.classList.toggle("has-value", inp.value.length > 0);
+      });
+
+      // Theme logic
+      const themeToggle = document.getElementById('theme-toggle');
+      const themeIcon = themeToggle.querySelector('img');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+      
+      function setTheme(isDark) {
+        if (isDark) {
+          document.documentElement.removeAttribute('data-theme');
+          themeIcon.src = 'svg/sun.svg';
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+          themeIcon.src = 'svg/moon.svg';
+        }
+      }
+
+      setTheme(prefersDark.matches);
+
+      prefersDark.addEventListener('change', (e) => setTheme(e.matches));
+
+      themeToggle.addEventListener('click', () => {
+        const isCurrentlyDark = !document.documentElement.hasAttribute('data-theme');
+        setTheme(!isCurrentlyDark);
       });
     </script>
   </body>

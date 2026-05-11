@@ -1,0 +1,31 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 极简高雅的冷灰色渐变 (参考阳极氧化铝/磨砂玻璃底色) -->
+    <radialGradient id="vignette" cx="40%" cy="30%" r="90%">
+      <stop offset="0%" stop-color="#A9ADB9"/>
+      <stop offset="50%" stop-color="#969BA4"/>
+      <stop offset="100%" stop-color="#848994"/>
+    </radialGradient>
+
+    <!-- 极轻微的流体起伏，几乎不可见，只增加高级空间感 -->
+    <filter id="smudge" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.003" numOctaves="3" seed="5"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+
+    <!-- 防断层与细密噪点 (模拟细腻的喷砂金属/磨砂质感) -->
+    <filter id="grain" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="1.5" numOctaves="2" seed="4"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+
+  <!-- 1. 基础底色 -->
+  <rect width="100%" height="100%" fill="url(#vignette)"/>
+
+  <!-- 2. 轻微光影流动 -->
+  <rect width="100%" height="100%" filter="url(#smudge)" style="mix-blend-mode: overlay; opacity: 0.06; pointer-events:none"/>
+  
+  <!-- 3. 高频细密噪点 -->
+  <rect width="100%" height="100%" filter="url(#grain)" style="mix-blend-mode: normal; opacity: 0.035; pointer-events:none"/>
+</svg>
