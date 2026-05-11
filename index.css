@@ -193,13 +193,43 @@ body {
   align-items: center;
   padding: 6px 14px;
   border-radius: 20px;
-  border: 1px solid var(--glass-border-dim);
   font-size: 13px;
   font-weight: 500;
   color: var(--text-primary);
   letter-spacing: 0.02em;
   background: var(--glass-bg-hover);
-  box-shadow: inset 1px 1px 0 var(--glass-border-faint);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-tag::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow:
+    inset 1px 1px 0px var(--glass-border-bright),
+    inset -1px -1px 0px var(--glass-border-light),
+    inset 2px 2px 8px 1px var(--glass-border-faint);
+  border: 0.5px solid transparent;
+  background-image: linear-gradient(
+    135deg,
+    var(--glass-border-mid),
+    transparent 30%,
+    transparent 70%,
+    var(--glass-border-light)
+  );
+  background-origin: border-box;
+  background-clip: border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+  mask-clip: content-box, border-box;
+  mask-composite: exclude;
 }
 
 .input-group {
@@ -241,14 +271,15 @@ body {
   pointer-events: none;
   box-shadow:
     inset 1px 1px 0px var(--glass-border-bright),
-    inset -1px -1px 0px var(--glass-border-dim),
+    inset -1px -1px 0px var(--glass-border-light),
     inset 2px 2px 8px 1px var(--glass-border-faint);
   border: 0.5px solid transparent;
   background-image: linear-gradient(
     135deg,
     var(--glass-border-mid),
-    transparent 50%,
-    var(--glass-border-dim)
+    transparent 30%,
+    transparent 70%,
+    var(--glass-border-light)
   );
   background-origin: border-box;
   background-clip: border-box;
@@ -325,14 +356,15 @@ body {
   pointer-events: none;
   box-shadow:
     inset 1px 1px 0px var(--glass-border-bright),
-    inset -1px -1px 0px var(--glass-border-dim),
+    inset -1px -1px 0px var(--glass-border-light),
     inset 2px 2px 8px 1px var(--glass-border-faint);
   border: 0.5px solid transparent;
   background-image: linear-gradient(
     135deg,
     var(--glass-border-mid),
-    transparent 50%,
-    var(--glass-border-dim)
+    transparent 30%,
+    transparent 70%,
+    var(--glass-border-light)
   );
   background-origin: border-box;
   background-clip: border-box;
@@ -387,16 +419,15 @@ body {
   pointer-events: none;
   box-shadow:
     inset 1px 1px 0px var(--glass-border-bright),
-    inset -1px -1px 0px rgba(10, 132, 255, 0.1),
+    inset -1px -1px 0px rgba(10, 132, 255, 0.4),
     inset 2px 2px 12px rgba(10, 132, 255, 0.2);
   border: 0.5px solid transparent;
   background-image: linear-gradient(
     135deg,
     var(--glass-border-mid),
-    transparent 40%,
-    rgba(10, 132, 255, 0.5)
-  );
-    rgba(10, 132, 255, 0.1)
+    transparent 30%,
+    transparent 70%,
+    rgba(10, 132, 255, 0.6)
   );
   background-origin: border-box;
   background-clip: border-box;
@@ -544,14 +575,15 @@ body {
   pointer-events: none;
   box-shadow:
     inset 1px 1px 0px var(--glass-border-bright),
-    inset -1px -1px 0px var(--glass-border-dim),
+    inset -1px -1px 0px var(--glass-border-light),
     inset 2px 2px 8px 1px var(--glass-border-faint);
   border: 0.5px solid transparent;
   background-image: linear-gradient(
     135deg,
     var(--glass-border-mid),
-    transparent 50%,
-    var(--glass-border-dim)
+    transparent 30%,
+    transparent 70%,
+    var(--glass-border-light)
   );
   background-origin: border-box;
   background-clip: border-box;
