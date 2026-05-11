@@ -24,7 +24,7 @@ body {
   font-family: var(--font-body);
   font-weight: 450;
   letter-spacing: 0.01em; /* 中文基础字间距 */
-  color: rgba(255, 255, 255, 0.9); /* visionOS强调高对比度纯净感 */
+  color: #EBEBF5; /* visionOS强调高对比度纯净感 */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -105,13 +105,13 @@ body {
 }
 
 .hero .highlight {
-  color: rgba(255, 255, 255, 0.9);
+  color: #EBEBF5;
 }
 
 .hero p {
   font-size: 17px;
   line-height: 1.6; /* 中文块需要更大的行高 */
-  color: rgba(255, 255, 255, 0.7);
+  color: #AEAEB2;
   margin: 0;
   font-weight: 450; /* 在深色毛玻璃上稍微加粗以提升辨识度 */
   letter-spacing: 0.01em;
@@ -159,7 +159,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   font-size: 17px;
-  color: rgba(255, 255, 255, 0.4); /* 稍微提升亮度 */
+  color: #636366; /* 稍微提升亮度 */
   font-weight: 450;
   letter-spacing: 0.01em;
   pointer-events: none;
@@ -172,7 +172,7 @@ body {
   top: 8px;
   transform: translateY(0);
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.6);
+  color: #8E8E93;
   font-weight: 550;
   letter-spacing: 0.02em; /* 小字号需要微量正字距 */
 }
@@ -180,7 +180,7 @@ body {
 .input-group input {
   background: transparent;
   border: none;
-  color: rgba(255, 255, 255, 0.9);
+  color: #EBEBF5;
   font-size: 17px;
   font-weight: 500;
   letter-spacing: 0.01em;
@@ -196,7 +196,7 @@ body {
   position: relative;
   z-index: 1;
   border: none;
-  color: rgba(255, 255, 255, 0.85);
+  color: #D1D1D6;
 }
 .liquid-glass-btn::before {
   content: "";
@@ -379,7 +379,7 @@ body {
   font-size: 17px;
   font-weight: 650;
   letter-spacing: 0;
-  color: rgba(255, 255, 255, 0.9);
+  color: #EBEBF5;
 }
 
 .step-info p {
@@ -388,7 +388,7 @@ body {
   font-weight: 450;
   letter-spacing: 0.01em;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.6);
+  color: #8E8E93;
 }
 
 .step-number {
@@ -402,7 +402,7 @@ body {
   font-size: 15px;
   font-weight: 650;
   letter-spacing: 0;
-  color: rgba(255, 255, 255, 0.85);
+  color: #D1D1D6;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
   flex-shrink: 0;
 }
@@ -431,7 +431,7 @@ body {
   font-size: 17px;
   font-weight: 650;
   letter-spacing: 0.02em;
-  color: rgba(255, 255, 255, 0.9);
+  color: #EBEBF5;
   display: flex;
   align-items: center;
   justify-content: center;
