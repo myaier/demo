@@ -17,8 +17,6 @@ body {
   margin: 0;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
   background: url("bg.svg") center/cover fixed;
   background-color: var(--apple-bg);
   font-family: var(--font-body);
@@ -31,7 +29,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  padding: 24px;
+  padding: 92px 24px 24px 24px;
   box-sizing: border-box;
   overflow-x: hidden;
 }
@@ -86,6 +84,7 @@ body {
 }
 
 .main-container {
+  margin: auto;
   width: 100%;
   max-width: 480px;
   display: flex;
@@ -124,7 +123,7 @@ body {
   position: relative;
   background: rgba(255, 255, 255, 0.04);
   border-radius: var(--r);
-  padding: 16px 24px;
+  padding: 16px 28px;
   cursor: text;
   min-height: 56px;
   box-sizing: border-box;
@@ -134,7 +133,7 @@ body {
 }
 
 .input-group.has-value {
-  padding: 24px 24px 8px;
+  padding: 24px 28px 8px;
   align-items: flex-end;
 }
 
@@ -158,7 +157,7 @@ body {
 
 .input-group label {
   position: absolute;
-  left: 24px;
+  left: 28px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 17px;
@@ -245,7 +244,7 @@ body {
   width: 100%;
   min-height: 56px;
   box-sizing: border-box;
-  padding: 0 24px;
+  padding: 0 28px;
   border-radius: var(--r);
   font-size: 17px;
   font-weight: 600;
@@ -322,7 +321,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 16px 24px;
+  padding: 16px 28px;
   border-radius: var(--r);
   text-decoration: none;
   font-size: 17px;
@@ -346,7 +345,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 24px;
+  padding: 20px 28px;
   border-radius: var(--r);
   background: rgba(255, 255, 255, 0.03);
   position: relative;
@@ -430,7 +429,7 @@ body {
   --r: 22px;
   border-radius: var(--r);
   height: 44px;
-  padding: 0 24px;
+  padding: 0 22px;
   font-size: 17px;
   font-weight: 600;
   letter-spacing: 0.02em;
