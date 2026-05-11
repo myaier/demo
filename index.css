@@ -52,12 +52,12 @@
   --glass-bg-steps: rgba(255, 255, 255, 0.15);
   --glass-bg-step-num: rgba(255, 255, 255, 0.6);
   --glass-bg-hover: rgba(255, 255, 255, 0.45);
-  --glass-border-light: rgba(255, 255, 255, 1);
-  --glass-border-dark: rgba(0, 0, 0, 0.04);
-  --glass-border-mid: rgba(255, 255, 255, 1);
-  --glass-border-dim: rgba(0, 0, 0, 0.02);
+  --glass-border-light: rgba(0, 0, 0, 0.06);
+  --glass-border-dark: rgba(0, 0, 0, 0.08);
+  --glass-border-mid: rgba(255, 255, 255, 0.9);
+  --glass-border-dim: rgba(0, 0, 0, 0.03);
   --glass-border-bright: rgba(255, 255, 255, 1);
-  --glass-border-faint: rgba(0, 0, 0, 0.02);
+  --glass-border-faint: rgba(255, 255, 255, 0.6);
   --btn-primary-bg: rgba(0, 122, 255, 0.1);
   --btn-primary-hover: rgba(0, 122, 255, 0.15);
   --btn-primary-shadow-in: rgba(0, 122, 255, 0.1);
@@ -70,7 +70,7 @@
   --step-divider-color: transparent;
   --demo-hover: rgba(255, 255, 255, 0.8);
   --glass-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
-  --element-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 0 0 0.5px rgba(0, 0, 0, 0.06);
+  --element-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.03);
   --filter-glass: url("svg/filter/W/glass.svg#l");
   --filter-highlight: url("svg/filter/W/highlight.svg#hl");
 }
