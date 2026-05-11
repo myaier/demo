@@ -11,7 +11,7 @@
   --text-tertiary: #636366;
   --text-quaternary: #8E8E93;
   --text-btn: #D1D1D6;
-  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.01));
   --glass-bg-input: rgba(255, 255, 255, 0.04);
   --glass-bg-steps: rgba(255, 255, 255, 0.02);
   --glass-bg-step-num: rgba(255, 255, 255, 0.06);
@@ -49,14 +49,14 @@
   --text-tertiary: #636366;
   --text-quaternary: #8E8E93;
   --text-btn: #3C3C43;
-  --glass-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.85));
+  --glass-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.65));
   --glass-bg-input: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.7));
   --glass-bg-steps: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.6));
   --glass-bg-step-num: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 1));
   --glass-bg-hover: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 1));
-  --glass-border-light: rgba(255, 255, 255, 1);
+  --glass-border-light: rgba(0, 0, 0, 0.06);
   --glass-border-dark: rgba(0, 0, 0, 0.08);
-  --glass-border-mid: rgba(0, 0, 0, 0.06);
+  --glass-border-mid: rgba(255, 255, 255, 1);
   --glass-border-dim: rgba(0, 0, 0, 0.02);
   --glass-border-bright: rgba(255, 255, 255, 1);
   --glass-border-faint: rgba(255, 255, 255, 0.8);
@@ -75,23 +75,23 @@
   
   /* Clean Shadows: crisp rims, pure glass feel */
   --glass-shadow: 
-    inset -1px -1px 0px rgba(255, 255, 255, 1), 
-    inset 1px 1px 0px rgba(0, 0, 0, 0.03), 
+    inset 1px 1px 0px rgba(255, 255, 255, 1), 
+    inset -1px -1px 0px rgba(0, 0, 0, 0.03), 
     inset 0 0 0 0.5px rgba(255, 255, 255, 0.5),
     0 24px 48px rgba(0, 0, 0, 0.06),
     0 8px 16px rgba(0, 0, 0, 0.02);
     
   /* Inner components: floating white glass */
   --element-shadow: 
-    inset -1px -1px 0px rgba(255, 255, 255, 0.8),
-    inset 1px 1px 0px rgba(0, 0, 0, 0.02),
+    inset 1px 1px 0px rgba(255, 255, 255, 0.8),
+    inset -1px -1px 0px rgba(0, 0, 0, 0.02),
     inset 0 0 0 0.5px rgba(255, 255, 255, 0.4),
     0 4px 12px rgba(0, 0, 0, 0.03),
     0 1px 2px rgba(0, 0, 0, 0.01);
     
   --element-shadow-hover: 
-    inset -1px -1px 0px rgba(255, 255, 255, 1),
-    inset 1px 1px 2px rgba(0, 0, 0, 0.05),
+    inset 1px 1px 0px rgba(255, 255, 255, 1),
+    inset -1px -1px 2px rgba(0, 0, 0, 0.05),
     inset 0 0 0 0.5px rgba(255, 255, 255, 0.6),
     0 6px 16px rgba(0, 0, 0, 0.05),
     0 2px 4px rgba(0, 0, 0, 0.02);

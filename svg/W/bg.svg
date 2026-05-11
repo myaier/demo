@@ -1,55 +1,63 @@
 <svg width="1920" height="1080" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Background Base Gradient (Light Grey to Deeper Silver Grey) -->
-    <linearGradient id="bgBase" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#EDEDED"/>
-      <stop offset="100%" stop-color="#D6D6D6"/>
+    <!-- Base Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EAEBEF"/>
+      <stop offset="100%" stop-color="#F5F5F7"/>
     </linearGradient>
 
-    <!-- Top Frost Curve Gradient (Screenshot color to Light Grey) -->
-    <linearGradient id="topFrost" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#F4F4F4"/>
-      <stop offset="100%" stop-color="#EDEDED"/>
+    <!-- Soft White Gradients for Waves -->
+    <linearGradient id="waveLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.5"/>
     </linearGradient>
-
-    <!-- Center Glow (Mimicking the light pool in the reference) -->
-    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+    
+    <linearGradient id="waveDim" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
-      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
-    </radialGradient>
+      <stop offset="100%" stop-color="#EBEBF0" stop-opacity="0.2"/>
+    </linearGradient>
 
-    <!-- Massive Blur for the volumetric frosted edge -->
-    <filter id="megaBlur" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="120"/>
+    <linearGradient id="waveBright" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <!-- Extremely soft drop shadow to create physical depth without harsh lines -->
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="48" flood-color="#000000" flood-opacity="0.03"/>
     </filter>
 
-    <!-- Paper Texture 1: The Pulp (Cloudy, uneven fibers of real paper) -->
-    <filter id="pulp">
-      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="4" stitchTiles="stitch"/>
-      <feColorMatrix type="saturate" values="0"/>
+    <filter id="softShadowLight" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="24" flood-color="#000000" flood-opacity="0.02"/>
     </filter>
 
-    <!-- Paper Texture 2: The Surface Grain (Tactile roughness) -->
+    <!-- Noise for premium physical texture -->
     <filter id="grain">
-      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" stitchTiles="stitch"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
       <feColorMatrix type="saturate" values="0"/>
     </filter>
   </defs>
 
-  <!-- 1. Deep Ice Blue Background -->
-  <rect width="100%" height="100%" fill="url(#bgBase)"/>
+  <!-- Background Base -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
 
-  <!-- 2. The Volumetric Top Frost Curve (A soft horizon line) -->
-  <!-- Dips gently in the middle, incredibly blurred for volumetric lighting -->
-  <path d="M -200 450 Q 960 750 2120 450 L 2120 -200 L -200 -200 Z" fill="url(#topFrost)" filter="url(#megaBlur)"/>
+  <!-- Wave Layers -->
+  <g>
+    <!-- BACK LAYER: The large swooping highlight, acting as the thick "halo" -->
+    <path d="M -100,850 C 300,850 350,150 850,150 C 1450,150 1600,400 2000,400 L 2000,1200 L -100,1200 Z" fill="#FFFFFF" opacity="0.4" filter="url(#softShadow)"/>
 
-  <!-- 3. Central Highlights to mimic the soft light pool -->
-  <ellipse cx="960" cy="540" rx="800" ry="500" fill="url(#centerGlow)" opacity="0.6"/>
+    <!-- MID LAYER: The main swooping wave -->
+    <path d="M -100,900 C 250,900 350,220 850,220 C 1400,220 1600,450 2000,450 L 2000,1200 L -100,1200 Z" fill="url(#waveLight)" filter="url(#softShadow)"/>
 
-  <!-- 4. The Premium Paper Textures Overlay -->
-  <!-- Layer 1: The 'Pulp' (creates slight cloudy unevenness mimicking paper fibers) -->
-  <rect width="100%" height="100%" filter="url(#pulp)" opacity="0.04" style="mix-blend-mode: multiply; pointer-events: none;"/>
-  <!-- Layer 2: The 'Grain' (creates the fine tactile surface roughness) -->
-  <rect width="100%" height="100%" filter="url(#grain)" opacity="0.06" style="mix-blend-mode: multiply; pointer-events: none;"/>
+    <!-- FRONT LAYER BOTTOM RIGHT: The halo -->
+    <path d="M 900,1200 C 1200,800 1500,650 2000,800 L 2000,1200 Z" fill="#FFFFFF" opacity="0.5" filter="url(#softShadowLight)"/>
+    <!-- FRONT LAYER BOTTOM RIGHT: Main wave -->
+    <path d="M 1000,1200 C 1250,850 1550,700 2000,850 L 2000,1200 Z" fill="url(#waveBright)" filter="url(#softShadowLight)"/>
+
+    <!-- FRONT LAYER BOTTOM LEFT: The subtle ground curve -->
+    <path d="M -100,1200 L -100,1050 C 150,1050 300,1080 500,1200 Z" fill="url(#waveDim)" opacity="0.9" filter="url(#softShadowLight)"/>
+  </g>
+
+  <!-- Multiply Noise -->
+  <rect width="100%" height="100%" filter="url(#grain)" opacity="0.04" style="mix-blend-mode: multiply; pointer-events: none;"/>
 </svg>
