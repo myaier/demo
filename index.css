@@ -37,7 +37,7 @@ body {
 }
 
 /* 核心 Liquid Glass 类 (恢复最开始的 SVG 排列与精细边框) */
-.liquid-glass {
+.LG {
   background: rgba(255, 255, 255, 0.03);
   border-radius: 48px; /* 调整为更大的类Squircle圆角 */
   position: relative;
@@ -45,7 +45,7 @@ body {
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
 }
 
-.liquid-glass::before {
+.LG::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -56,7 +56,7 @@ body {
     url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="l" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="40"/></filter></svg>#l');
 }
 
-.liquid-glass::after {
+.LG::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -194,14 +194,14 @@ body {
 }
 
 /* 通用 Liquid Glass 按钮 (白框/浅底) */
-.liquid-glass-btn {
+.LG-btn {
   background: rgba(255, 255, 255, 0.04);
   position: relative;
   z-index: 1;
   border: none;
   color: #D1D1D6;
 }
-.liquid-glass-btn::before {
+.LG-btn::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -211,7 +211,7 @@ body {
   backdrop-filter: blur(12px)
     url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="l" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="40"/></filter></svg>#l');
 }
-.liquid-glass-btn::after {
+.LG-btn::after {
   content: "";
   position: absolute;
   inset: 0;
