@@ -21,6 +21,7 @@ b {
   --glass-bg-steps: rgba(255, 255, 255, 0.02);
   --glass-bg-step-num: rgba(255, 255, 255, 0.06);
   --glass-bg-hover: rgba(255, 255, 255, 0.08);
+  --glass-bg-tag: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
   --glass-border-light: rgba(255, 255, 255, 0.2);
   --glass-border-dark: rgba(255, 255, 255, 0.05);
   --glass-border-mid: rgba(255, 255, 255, 0.4);
@@ -30,10 +31,8 @@ b {
   --btn-primary-bg: rgba(10, 132, 255, 0.05);
   --btn-primary-hover: rgba(10, 132, 255, 0.12);
   --btn-primary-shadow: var(--element-shadow);
-  --btn-primary-shadow-in: rgba(10, 132, 255, 0.25);
-  --btn-primary-shadow-out: rgba(0, 0, 0, 0.3);
-  --btn-primary-text-shadow: rgba(10, 132, 255, 0.5);
-  --btn-primary-active-shadow: rgba(10, 132, 255, 0.15);
+  --btn-primary-shadow-hover: var(--element-shadow-hover), inset 0 0 24px var(--btn-primary-shadow-in);
+  --btn-primary-shadow-active: var(--element-shadow-active), inset 0 2px 8px var(--btn-primary-active-shadow);
   --icon-filter: invert(1) opacity(0.85);
   --bg-image: url("svg/B/bg.svg");
   --divider-bg: url("svg/B/divider.svg") no-repeat center/100% 100%;
@@ -42,7 +41,8 @@ b {
   --glass-shadow: inset -4px -4px 16px rgba(0, 0, 0, 0.4), inset 0 0 0 0.5px rgba(255, 255, 255, 0.05);
   --element-shadow: inset 2px -2px 8px rgba(0, 0, 0, 0.15), inset -2px -2px 8px rgba(0, 0, 0, 0.15), inset 0 0 0 0.5px rgba(255, 255, 255, 0.05);
   --input-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.3), inset 0 -1px 2px rgba(255, 255, 255, 0.05), inset 0 0 0 0.5px rgba(255, 255, 255, 0.05);
-  --element-shadow-hover: inset -2px -2px 12px rgba(0, 0, 0, 0.3), inset 0 0 0 0.5px rgba(255, 255, 255, 0.1);
+  --element-shadow-hover: inset 4px -4px 16px rgba(0, 0, 0, 0.4), inset -4px -4px 16px rgba(0, 0, 0, 0.4), inset 0 0 0 0.5px rgba(255, 255, 255, 0.15);
+  --element-shadow-active: inset 0 4px 12px rgba(0, 0, 0, 0.5), inset 0 -1px 2px rgba(255, 255, 255, 0.02), inset 0 0 0 0.5px rgba(255, 255, 255, 0.05);
   --filter-glass: url("svg/filter/B/glass.svg#l");
   --filter-highlight: url("svg/filter/B/highlight.svg#hl");
 }
@@ -60,6 +60,7 @@ b {
   --glass-bg-steps: linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.35));
   --glass-bg-step-num: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 1));
   --glass-bg-hover: linear-gradient(135deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.08));
+  --glass-bg-tag: linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.3));
   --glass-border-light: rgba(0, 0, 0, 0.06);
   --glass-border-dark: rgba(0, 0, 0, 0.08);
   --glass-border-mid: rgba(0, 0, 0, 0.15);
@@ -69,10 +70,17 @@ b {
   --btn-primary-bg: linear-gradient(180deg, rgba(0, 122, 255, 0.1), rgba(0, 122, 255, 0.15));
   --btn-primary-hover: linear-gradient(180deg, rgba(0, 122, 255, 0.15), rgba(0, 122, 255, 0.25));
   --btn-primary-shadow: inset 0px 4px 12px rgba(255,255,255,0.4), inset 2px -2px 6px rgba(0,0,0,0.05), inset -2px -2px 6px rgba(0,0,0,0.05), inset 0 0 0 0.5px rgba(255,255,255,0.5);
-  --btn-primary-shadow-in: rgba(0, 122, 255, 0.15);
-  --btn-primary-shadow-out: rgba(0, 122, 255, 0.1);
-  --btn-primary-text-shadow: rgba(0, 122, 255, 0.1);
-  --btn-primary-active-shadow: rgba(0, 122, 255, 0.05);
+  --btn-primary-shadow-hover: 
+    inset 0px 4px 16px rgba(255, 255, 255, 0.8), 
+    inset 4px -4px 12px rgba(0,0,0,0.1), 
+    inset -4px -4px 12px rgba(0,0,0,0.1), 
+    inset 0 0 0 0.5px rgba(255,255,255,0.8),
+    inset 0 0 24px rgba(0, 122, 255, 0.2);
+  --btn-primary-shadow-active: 
+    inset 0px 4px 12px rgba(0, 0, 0, 0.15),
+    inset 0px -2px 4px rgba(255, 255, 255, 0.8),
+    inset 0 0 0 0.5px rgba(0, 0, 0, 0.05),
+    inset 0 2px 8px rgba(0, 122, 255, 0.1);
   --icon-filter: invert(0) opacity(0.7);
   --bg-image: url("svg/W/bg.svg");
   --divider-bg: url("svg/W/divider.svg") no-repeat center/100% 100%;
@@ -99,9 +107,15 @@ b {
     inset 0 0 0 0.5px rgba(0, 0, 0, 0.05);
     
   --element-shadow-hover: 
-    inset 1px 1px 6px rgba(255, 255, 255, 1),
-    inset -2px -2px 6px rgba(0, 0, 0, 0.06),
-    inset 0 0 0 0.5px rgba(255, 255, 255, 0.6);
+    inset 0px 4px 16px rgba(255, 255, 255, 1),
+    inset 4px -4px 12px rgba(0, 0, 0, 0.12),
+    inset -4px -4px 12px rgba(0, 0, 0, 0.12),
+    inset 0 0 0 0.5px rgba(255, 255, 255, 0.8);
+    
+  --element-shadow-active: 
+    inset 0px 4px 10px rgba(0, 0, 0, 0.1),
+    inset 0px -2px 4px rgba(255, 255, 255, 0.8),
+    inset 0 0 0 0.5px rgba(0, 0, 0, 0.05);
     
   --filter-glass: url("svg/filter/W/glass.svg#l");
   --filter-highlight: url("svg/filter/W/highlight.svg#hl");
@@ -232,14 +246,14 @@ body {
   font-weight: 500;
   color: var(--text-primary);
   letter-spacing: 0.02em;
-  background: var(--glass-bg-hover);
+  background: var(--glass-bg-tag);
   position: relative;
   z-index: 1;
       box-shadow: var(--element-shadow);
 }
 
 [data-theme="light"] .tag {
-  box-shadow: inset 0 0 3px rgba(0,0,0,.2);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.04), inset 0 0 0 0.5px rgba(0, 0, 0, 0.05);
 }
 
 .tag::after {
@@ -383,6 +397,10 @@ body {
   background: var(--glass-bg-hover);
   box-shadow: var(--element-shadow-hover);
 }
+.btn:active {
+  box-shadow: var(--element-shadow-active);
+  transform: scale(0.97);
+}
 .btn::before {
   content: "";
   position: absolute;
@@ -478,16 +496,14 @@ body {
 .primary:hover {
   background: var(--btn-primary-hover);
   transform: translateY(-1px);
-  box-shadow:
-    inset 0 0 24px var(--btn-primary-shadow-in),
-    inset 0 8px 32px var(--btn-primary-shadow-out);
+  box-shadow: var(--btn-primary-shadow-hover);
   text-shadow: 0 0 12px var(--btn-primary-text-shadow);
 }
 
 .primary:active {
   transform: scale(0.975) translateY(0);
   transition: 0.1s;
-  box-shadow: inset 0 0 8px var(--btn-primary-active-shadow);
+  box-shadow: var(--btn-primary-shadow-active);
 }
 
 /* 演示链接 (次要) */
