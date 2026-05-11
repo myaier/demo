@@ -1,70 +1,55 @@
 <svg width="1920" height="1080" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Background Blue -->
-    <linearGradient id="bgBlue" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#0A284A"/>
-      <stop offset="100%" stop-color="#145EAA"/>
+    <!-- Background Base Gradient (Light Grey to Deeper Silver Grey) -->
+    <linearGradient id="bgBase" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EDEDED"/>
+      <stop offset="100%" stop-color="#D6D6D6"/>
     </linearGradient>
 
-    <!-- Light Blue Wave -->
-    <linearGradient id="waveBlue" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#145EAA"/>
-      <stop offset="100%" stop-color="#1A73C9"/>
+    <!-- Top Frost Curve Gradient (Screenshot color to Light Grey) -->
+    <linearGradient id="topFrost" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F4F4F4"/>
+      <stop offset="100%" stop-color="#EDEDED"/>
     </linearGradient>
 
-    <!-- Main Sexy Red to Yellow Flow -->
-    <linearGradient id="waveRedYellow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#CA215B"/>
-      <stop offset="30%" stop-color="#E94334"/>
-      <stop offset="60%" stop-color="#FDB231"/>
-      <stop offset="100%" stop-color="#F25B22"/>
-    </linearGradient>
+    <!-- Center Glow (Mimicking the light pool in the reference) -->
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
 
-    <!-- Mid Brown/Orange Flow -->
-    <linearGradient id="waveBrown" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#A51D44"/>
-      <stop offset="50%" stop-color="#D14028"/>
-      <stop offset="100%" stop-color="#D97228"/>
-    </linearGradient>
-
-    <!-- Bottom Deep Purple Flow -->
-    <linearGradient id="wavePurple" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#55215A"/>
-      <stop offset="50%" stop-color="#712F6C"/>
-      <stop offset="100%" stop-color="#3A1E52"/>
-    </linearGradient>
-
-    <!-- Realistic Drop Shadows -->
-    <filter id="shadowHeavy" x="-10%" y="-10%" width="120%" height="150%">
-      <feDropShadow dx="0" dy="25" stdDeviation="25" flood-color="#000000" flood-opacity="0.4"/>
+    <!-- Massive Blur for the volumetric frosted edge -->
+    <filter id="megaBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="120"/>
     </filter>
-    <filter id="shadowSoft" x="-10%" y="-10%" width="120%" height="150%">
-      <feDropShadow dx="0" dy="15" stdDeviation="15" flood-color="#000000" flood-opacity="0.3"/>
+
+    <!-- Paper Texture 1: The Pulp (Cloudy, uneven fibers of real paper) -->
+    <filter id="pulp">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
     </filter>
-    
-    <!-- Path Definitions for reuse -->
-    <path id="pathBlue" d="M-100,200 C300,200 500,500 1000,400 S1600,150 2100,300 L2100,1200 L-100,1200 Z"/>
-    <path id="pathMain" d="M-100,350 C200,350 250,650 450,550 S700,350 800,400 S1000,750 1150,600 S1450,400 1600,450 S1900,650 2100,500 L2100,1200 L-100,1200 Z"/>
-    <path id="pathBrown" d="M-100,600 C300,600 500,800 800,700 S1200,550 1400,700 S1800,900 2100,750 L2100,1200 L-100,1200 Z"/>
-    <path id="pathPurple" d="M-100,850 C400,850 600,750 1000,850 S1600,1050 2100,900 L2100,1200 L-100,1200 Z"/>
+
+    <!-- Paper Texture 2: The Surface Grain (Tactile roughness) -->
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
   </defs>
 
-  <!-- 1. Deep Blue Background -->
-  <rect width="100%" height="100%" fill="url(#bgBlue)"/>
+  <!-- 1. Deep Ice Blue Background -->
+  <rect width="100%" height="100%" fill="url(#bgBase)"/>
 
-  <!-- 2. Light Blue Background Wave -->
-  <use href="#pathBlue" fill="url(#waveBlue)" filter="url(#shadowSoft)"/>
-  <use href="#pathBlue" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.15"/>
+  <!-- 2. The Volumetric Top Frost Curve (A soft horizon line) -->
+  <!-- Dips gently in the middle, incredibly blurred for volumetric lighting -->
+  <path d="M -200 450 Q 960 750 2120 450 L 2120 -200 L -200 -200 Z" fill="url(#topFrost)" filter="url(#megaBlur)"/>
 
-  <!-- 3. The Main Sexy Red-Yellow Wave -->
-  <use href="#pathMain" fill="url(#waveRedYellow)" filter="url(#shadowHeavy)"/>
-  <use href="#pathMain" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.25"/>
+  <!-- 3. Central Highlights to mimic the soft light pool -->
+  <ellipse cx="960" cy="540" rx="800" ry="500" fill="url(#centerGlow)" opacity="0.6"/>
 
-  <!-- 4. Lower Orange/Red Wave -->
-  <use href="#pathBrown" fill="url(#waveBrown)" filter="url(#shadowSoft)"/>
-  <use href="#pathBrown" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.15"/>
-
-  <!-- 5. Bottom Deep Purple Base -->
-  <use href="#pathPurple" fill="url(#wavePurple)" filter="url(#shadowHeavy)"/>
-  <use href="#pathPurple" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.15"/>
+  <!-- 4. The Premium Paper Textures Overlay -->
+  <!-- Layer 1: The 'Pulp' (creates slight cloudy unevenness mimicking paper fibers) -->
+  <rect width="100%" height="100%" filter="url(#pulp)" opacity="0.04" style="mix-blend-mode: multiply; pointer-events: none;"/>
+  <!-- Layer 2: The 'Grain' (creates the fine tactile surface roughness) -->
+  <rect width="100%" height="100%" filter="url(#grain)" opacity="0.06" style="mix-blend-mode: multiply; pointer-events: none;"/>
 </svg>
