@@ -1,13 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 2" preserveAspectRatio="none">
   <defs>
+    <!-- Light source from top-left (135deg), brightest on left, fading to right -->
     <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.3"/>
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.03"/>
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
     </linearGradient>
     <linearGradient id="shadow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#000000" stop-opacity="0.2"/>
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#000000" stop-opacity="0.03"/>
       <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </linearGradient>
   </defs>
