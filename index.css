@@ -219,10 +219,10 @@ body {
   pointer-events: none;
   border: 0.5px solid transparent;
   background-image: linear-gradient(
-    315deg,
-    rgba(255, 255, 255, 0.3),
-    transparent 50%,
-    rgba(255, 255, 255, 0.05)
+    135deg,
+    var(--glass-border-light),
+    transparent 40%,
+    var(--glass-border-dark)
   );
   background-origin: border-box;
   background-clip: border-box;
