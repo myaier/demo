@@ -1,72 +1,70 @@
 <svg width="1920" height="1080" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Base Background: Very clean, bright frosted silver -->
-    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#F8FAFC"/>
-      <stop offset="100%" stop-color="#EEF2F6"/>
+    <!-- Background Blue -->
+    <linearGradient id="bgBlue" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0A284A"/>
+      <stop offset="100%" stop-color="#145EAA"/>
     </linearGradient>
 
-    <!-- Liquid Glass Iridescent Colors -->
-    <!-- Vibrant Cyan to Deep Blue -->
-    <linearGradient id="flowCyan" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#0EA5E9" stop-opacity="0.85"/>
-      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.95"/>
+    <!-- Light Blue Wave -->
+    <linearGradient id="waveBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#145EAA"/>
+      <stop offset="100%" stop-color="#1A73C9"/>
     </linearGradient>
 
-    <!-- Coral Pink to Magenta -->
-    <linearGradient id="flowPink" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#F43F5E" stop-opacity="0.95"/>
-      <stop offset="50%" stop-color="#D946EF" stop-opacity="0.85"/>
-      <stop offset="100%" stop-color="#C084FC" stop-opacity="0"/>
+    <!-- Main Sexy Red to Yellow Flow -->
+    <linearGradient id="waveRedYellow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#CA215B"/>
+      <stop offset="30%" stop-color="#E94334"/>
+      <stop offset="60%" stop-color="#FDB231"/>
+      <stop offset="100%" stop-color="#F25B22"/>
     </linearGradient>
 
-    <!-- Holographic Purple/Lavender -->
-    <linearGradient id="flowPurple" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#A855F7" stop-opacity="0.75"/>
-      <stop offset="100%" stop-color="#EC4899" stop-opacity="0.95"/>
+    <!-- Mid Brown/Orange Flow -->
+    <linearGradient id="waveBrown" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A51D44"/>
+      <stop offset="50%" stop-color="#D14028"/>
+      <stop offset="100%" stop-color="#D97228"/>
     </linearGradient>
 
-    <!-- Soft Ambient Glow Filter -->
-    <filter id="softGlow" x="-30%" y="-50%" width="160%" height="200%">
-      <feGaussianBlur stdDeviation="80" result="blur"/>
+    <!-- Bottom Deep Purple Flow -->
+    <linearGradient id="wavePurple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#55215A"/>
+      <stop offset="50%" stop-color="#712F6C"/>
+      <stop offset="100%" stop-color="#3A1E52"/>
+    </linearGradient>
+
+    <!-- Realistic Drop Shadows -->
+    <filter id="shadowHeavy" x="-10%" y="-10%" width="120%" height="150%">
+      <feDropShadow dx="0" dy="25" stdDeviation="25" flood-color="#000000" flood-opacity="0.4"/>
     </filter>
+    <filter id="shadowSoft" x="-10%" y="-10%" width="120%" height="150%">
+      <feDropShadow dx="0" dy="15" stdDeviation="15" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+    
+    <!-- Path Definitions for reuse -->
+    <path id="pathBlue" d="M-100,200 C300,200 500,500 1000,400 S1600,150 2100,300 L2100,1200 L-100,1200 Z"/>
+    <path id="pathMain" d="M-100,350 C200,350 250,650 450,550 S700,350 800,400 S1000,750 1150,600 S1450,400 1600,450 S1900,650 2100,500 L2100,1200 L-100,1200 Z"/>
+    <path id="pathBrown" d="M-100,600 C300,600 500,800 800,700 S1200,550 1400,700 S1800,900 2100,750 L2100,1200 L-100,1200 Z"/>
+    <path id="pathPurple" d="M-100,850 C400,850 600,750 1000,850 S1600,1050 2100,900 L2100,1200 L-100,1200 Z"/>
   </defs>
 
-  <!-- 1. Background -->
-  <rect width="100%" height="100%" fill="url(#bg)"/>
+  <!-- 1. Deep Blue Background -->
+  <rect width="100%" height="100%" fill="url(#bgBlue)"/>
 
-  <!-- 2. Screen-Spanning Fluid Curved Ribbons -->
-  
-  <!-- Top Curve: Coral to Magenta -->
-  <!-- Ambient Glow -->
-  <path d="M-100,200 C400,350 1400,50 2100,200 L2100,350 C1400,200 400,500 -100,350 Z" fill="url(#flowPink)" filter="url(#softGlow)" opacity="0.6"/>
-  <!-- Crisp Core Geometric Curve -->
-  <path d="M-100,200 C400,350 1400,50 2100,200 L2100,350 C1400,200 400,500 -100,350 Z" fill="url(#flowPink)" opacity="0.85"/>
-  <!-- Glass Edge -->
-  <path d="M-100,230 C400,380 1400,80 2100,230" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.8"/>
+  <!-- 2. Light Blue Background Wave -->
+  <use href="#pathBlue" fill="url(#waveBlue)" filter="url(#shadowSoft)"/>
+  <use href="#pathBlue" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.15"/>
 
-  <!-- Center Sweeping Holographic Purple -->
-  <!-- Ambient Glow -->
-  <path d="M-100,450 C600,300 1400,650 2100,450 L2100,600 C1400,800 600,450 -100,600 Z" fill="url(#flowPurple)" filter="url(#softGlow)" opacity="0.6"/>
-  <!-- Crisp Core Geometric Curve -->
-  <path d="M-100,450 C600,300 1400,650 2100,450 L2100,600 C1400,800 600,450 -100,600 Z" fill="url(#flowPurple)" opacity="0.85"/>
-  <!-- Glass Edge -->
-  <path d="M-100,480 C600,330 1400,680 2100,480" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.7"/>
+  <!-- 3. The Main Sexy Red-Yellow Wave -->
+  <use href="#pathMain" fill="url(#waveRedYellow)" filter="url(#shadowHeavy)"/>
+  <use href="#pathMain" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.25"/>
 
-  <!-- Bottom Curve: Cyan to Blue -->
-  <!-- Ambient Glow -->
-  <path d="M-100,800 C600,650 1300,950 2100,800 L2100,950 C1300,1100 600,800 -100,950 Z" fill="url(#flowCyan)" filter="url(#softGlow)" opacity="0.6"/>
-  <!-- Crisp Core Geometric Curve -->
-  <path d="M-100,800 C600,650 1300,950 2100,800 L2100,950 C1300,1100 600,800 -100,950 Z" fill="url(#flowCyan)" opacity="0.85"/>
-  <!-- Glass Edge -->
-  <path d="M-100,830 C600,680 1300,980 2100,830" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.8"/>
+  <!-- 4. Lower Orange/Red Wave -->
+  <use href="#pathBrown" fill="url(#waveBrown)" filter="url(#shadowSoft)"/>
+  <use href="#pathBrown" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.15"/>
 
-  <!-- 3. Floating Holographic Rings for Depth -->
-  <circle cx="1500" cy="300" r="250" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.4" filter="url(#softGlow)"/>
-  <circle cx="1500" cy="300" r="250" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.6"/>
-  
-  <circle cx="400" cy="800" r="350" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.3" filter="url(#softGlow)"/>
-  <circle cx="400" cy="800" r="350" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.5"/>
+  <!-- 5. Bottom Deep Purple Base -->
+  <use href="#pathPurple" fill="url(#wavePurple)" filter="url(#shadowHeavy)"/>
+  <use href="#pathPurple" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.15"/>
 </svg>
