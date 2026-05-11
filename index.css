@@ -35,6 +35,8 @@
   --demo-hover: rgba(255, 255, 255, 0.08);
   --glass-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
   --element-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 0 0.5px rgba(0, 0, 0, 0.2);
+  --filter-glass: url("svg/filter/B/glass.svg#l");
+  --filter-highlight: url("svg/filter/B/highlight.svg#hl");
 }
 
 [data-theme="light"] {
@@ -69,6 +71,8 @@
   --demo-hover: rgba(255, 255, 255, 0.8);
   --glass-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
   --element-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 0 0 0.5px rgba(0, 0, 0, 0.06);
+  --filter-glass: url("svg/filter/W/glass.svg#l");
+  --filter-highlight: url("svg/filter/W/highlight.svg#hl");
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -255,9 +259,9 @@ body {
   z-index: -1;
   border-radius: inherit;
   background: var(--glass-bg-input);
-  backdrop-filter: blur(16px) url("svg/filter/glass.svg#l");
+  backdrop-filter: blur(16px) var(--filter-glass);
   /* Liquid Glass 动态高光滤镜 */
-  filter: url("svg/filter/highlight.svg#hl");
+  filter: var(--filter-highlight);
 }
 
 .input-group.has-value {
@@ -347,8 +351,7 @@ body {
   z-index: -1;
   border-radius: inherit;
   clip-path: inset(0 round var(--r));
-  backdrop-filter: blur(12px)
-    url("svg/filter/glass.svg#l");
+  backdrop-filter: blur(12px) var(--filter-glass);
 }
 .LG-btn::after {
   content: "";
@@ -410,8 +413,7 @@ body {
   z-index: -1;
   border-radius: inherit;
   clip-path: inset(0 round var(--r));
-  backdrop-filter: blur(12px)
-    url("svg/filter/glass.svg#l");
+  backdrop-filter: blur(12px) var(--filter-glass);
 }
 
 .btn-primary::after {
