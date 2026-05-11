@@ -11,9 +11,9 @@
     <nav class="nav">
       <b class="logo btn">TalkTo.Me</b>
       <b class="actions">
-        <button class="icon btn" id="theme-toggle"><img src="svg/sun.svg" alt="Theme" /></button>
-        <button class="icon btn" id="lang-toggle"><img src="svg/lang.svg" alt="Language" /></button>
-        <button class="icon btn"><img src="svg/menu.svg" alt="Menu" /></button>
+        <button class="icon btn theme-toggle" id="theme-toggle" aria-label="Toggle Theme"><b class="ic"></b></button>
+        <button class="icon btn lang-toggle" id="lang-toggle" aria-label="Language"><b class="ic"></b></button>
+        <button class="icon btn menu-toggle" aria-label="Menu"><b class="ic"></b></button>
       </b>
     </nav>
     <main class="LG main">
@@ -44,46 +44,35 @@
             <h3 data-i18n="step1_title">创建链接</h3>
             <p data-i18n="step1_desc">注册后即得 yourname.talkto.me</p>
           </b>
-          <b class="num"><img src="svg/link.svg" style="width: 13px; height: 13px; filter: var(--icon-filter);" /></b>
+          <b class="num step-link"></b>
         </b>
         <b class="step">
           <b class="info">
             <h3 data-i18n="step2_title">配置规则</h3>
             <p data-i18n="step2_desc">告诉智能体如何代表你接待访客</p>
           </b>
-          <b class="num"><img src="svg/settings.svg" style="width: 13px; height: 13px; filter: var(--icon-filter);" /></b>
+          <b class="num step-settings"></b>
         </b>
         <b class="step">
           <b class="info">
             <h3 data-i18n="step3_title">绑定推送</h3>
             <p data-i18n="step3_desc">重要对话实时推送到你的聊天工具</p>
           </b>
-          <b class="num"><img src="svg/bell.svg" style="width: 13px; height: 13px; filter: var(--icon-filter);" /></b>
+          <b class="num step-bell"></b>
         </b>
       </b>
     </main>
     <script>
       const D = document, 
             byId = id => D.getElementById(id),
-            body = D.body;
+            body = D.body,
+            inp = byId("email-input"),
+            grp = byId("email-group"),
+            themeToggle = byId('theme-toggle'),
+            prefersDark = window.matchMedia('(prefers-color-scheme: dark)'),
+            setTheme = isDark => body.classList.toggle('W', !isDark);
 
-      const inp = byId("email-input"),
-            grp = byId("email-group");
-
-      inp.addEventListener("input", () => {
-        grp.classList.toggle("has-value", inp.value.length > 0);
-      });
-
-      // Theme logic
-      const themeToggle = byId('theme-toggle'),
-            themeIcon = themeToggle.querySelector('img'),
-            prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-      
-      const setTheme = isDark => {
-        body.classList.toggle('W', !isDark);
-        themeIcon.src = isDark ? 'svg/sun.svg' : 'svg/moon.svg';
-      };
-
+      inp.addEventListener("input", () => grp.classList.toggle("has-value", inp.value.length > 0));
       setTheme(prefersDark.matches);
       prefersDark.addEventListener('change', e => setTheme(e.matches));
       themeToggle.addEventListener('click', () => setTheme(body.classList.contains('W')));
