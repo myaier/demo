@@ -44,11 +44,11 @@
   --text-tertiary: #636366;
   --text-quaternary: #8E8E93;
   --text-btn: #3C3C43;
-  --glass-bg: rgba(255, 255, 255, 0.65);
-  --glass-bg-input: rgba(255, 255, 255, 0.75);
-  --glass-bg-steps: rgba(255, 255, 255, 0.5);
-  --glass-bg-step-num: rgba(255, 255, 255, 0.8);
-  --glass-bg-hover: rgba(255, 255, 255, 0.9);
+  --glass-bg: rgba(255, 255, 255, 0.25);
+  --glass-bg-input: rgba(255, 255, 255, 0.35);
+  --glass-bg-steps: rgba(255, 255, 255, 0.15);
+  --glass-bg-step-num: rgba(255, 255, 255, 0.6);
+  --glass-bg-hover: rgba(255, 255, 255, 0.45);
   --glass-border-light: rgba(255, 255, 255, 1);
   --glass-border-dark: rgba(0, 0, 0, 0.04);
   --glass-border-mid: rgba(255, 255, 255, 1);
@@ -498,8 +498,8 @@ body {
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 0;
-  color: var(--text-btn);
-  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.15), inset -1px -1px 0 rgba(0, 0, 0, 0.1);
+  color: var(--text-primary);
+  box-shadow: inset 1px 1px 2px var(--glass-border-light), inset -1px -1px 0 var(--glass-border-faint), 0 2px 4px var(--glass-border-dark);
   flex-shrink: 0;
   user-select: none;
   -webkit-user-select: none;
