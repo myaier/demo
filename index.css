@@ -337,22 +337,13 @@ body {
 .steps {
   display: flex;
   flex-direction: column;
-  gap: 12px;
   margin-top: 8px;
-}
-
-.step-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 28px;
+  background: rgba(255, 255, 255, 0.02);
   border-radius: var(--r);
-  background: rgba(255, 255, 255, 0.03);
   position: relative;
-  transition: transform 0.2s;
 }
 
-.step-card::after {
+.steps::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -360,14 +351,35 @@ body {
   pointer-events: none;
   padding: 1px;
   background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0.02) 100%
+    180deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.01) 100%
   );
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
+  mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+  mask-clip: content-box, border-box;
+  mask-composite: exclude;
+}
+
+.step-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 28px;
+  position: relative;
+}
+
+.step-card:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: url("divider.svg") no-repeat center/100% 100%;
 }
 
 .step-info {
@@ -397,7 +409,7 @@ body {
   width: 32px;
   height: 32px;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -405,8 +417,10 @@ body {
   font-weight: 600;
   letter-spacing: 0;
   color: #D1D1D6;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
   flex-shrink: 0;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 /* 顶部导航 */
