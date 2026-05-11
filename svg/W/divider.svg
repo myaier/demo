@@ -2,9 +2,9 @@
   <defs>
     <!-- Dark indent line -->
     <linearGradient id="shadow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#000000" stop-opacity="0.06"/>
-      <stop offset="50%" stop-color="#000000" stop-opacity="0.02"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#000000" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.02"/>
     </linearGradient>
     <!-- White highlight below the indent -->
     <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="0%">
