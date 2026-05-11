@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="title">TalkTo.Me - AI接待</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="lang.js" defer></script>
+  </head>
+  <body>
+    <nav class="top-nav">
+      <div class="logo-pill liquid-glass-btn">TalkTo.Me</div>
+      <div class="nav-actions">
+        <button class="icon-btn liquid-glass-btn" id="lang-toggle"><img src="lang.svg" alt="Language" /></button>
+        <button class="icon-btn liquid-glass-btn"><img src="menu.svg" alt="Menu" /></button>
+      </div>
+    </nav>
+    <div class="liquid-glass main-container">
+      <div class="hero">
+        <h1 data-i18n="hero_title">让 <span class="highlight">AI</span> 替您<br />接待每一位来访者</h1>
+        <p data-i18n="hero_desc">创建个人专属链接，智能体按您设定的规则和访客沟通、索取信息，消除无效交流</p>
+      </div>
+
+      <div class="input-group" id="email-group">
+        <label for="email-input" data-i18n="email_label">邮箱地址</label>
+        <input id="email-input" type="email" autofocus />
+      </div>
+
+      <button class="btn-primary" data-i18n="btn_register">注册 / 登录</button>
+
+      <a href="#" class="demo-link liquid-glass-btn" data-i18n="demo_link"
+        >点此体验演示 <span style="font-size: 18px; margin-left: 4px">›</span></a
+      >
+
+      <div class="steps">
+        <div class="step-card">
+          <div class="step-info">
+            <h3 data-i18n="step1_title">创建链接</h3>
+            <p data-i18n="step1_desc">注册后即得 yourname.talkto.me</p>
+          </div>
+          <div class="step-number">1</div>
+        </div>
+        <div class="step-card">
+          <div class="step-info">
+            <h3 data-i18n="step2_title">配置规则</h3>
+            <p data-i18n="step2_desc">告诉智能体如何代表你接待访客</p>
+          </div>
+          <div class="step-number">2</div>
+        </div>
+        <div class="step-card">
+          <div class="step-info">
+            <h3 data-i18n="step3_title">绑定推送</h3>
+            <p data-i18n="step3_desc">重要对话实时推送到你的聊天工具</p>
+          </div>
+          <div class="step-number">3</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const inp = document.getElementById("email-input");
+      const grp = document.getElementById("email-group");
+      inp.addEventListener("input", () => {
+        grp.classList.toggle("has-value", inp.value.length > 0);
+      });
+    </script>
+  </body>
+</html>

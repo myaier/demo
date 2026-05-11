@@ -1,0 +1,461 @@
+@import url("Sf/merge/woff2/result.css");
+
+:root {
+  --font-heading: "S";
+  --font-body: "S";
+  --apple-blue: #0a84ff;
+  --apple-bg: #000000;
+  --r: 24px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("bg.svg") center/cover fixed;
+  background-color: var(--apple-bg);
+  font-family: var(--font-body);
+  font-weight: 450;
+  letter-spacing: 0.01em; /* 中文基础字间距 */
+  color: rgba(255, 255, 255, 0.9); /* visionOS强调高对比度纯净感 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  padding: 24px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* 核心 Liquid Glass 类 (恢复最开始的 SVG 排列与精细边框) */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 48px; /* 调整为更大的类Squircle圆角 */
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+}
+
+.liquid-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  clip-path: inset(0 round 48px);
+  backdrop-filter: blur(16px)
+    url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="l" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="40"/></filter></svg>#l');
+}
+
+.liquid-glass::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow:
+    inset 1px 1px 0px rgba(255, 255, 255, 0.2),
+    inset -1px -1px 0px rgba(255, 255, 255, 0.05),
+    inset 2px 2px 12px rgba(255, 255, 255, 0.05);
+  border: 0.5px solid transparent;
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.2),
+    transparent 40%,
+    rgba(255, 255, 255, 0.05)
+  );
+  background-origin: border-box;
+  background-clip: border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+  mask-clip: content-box, border-box;
+  mask-composite: exclude;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 40px 32px;
+}
+
+.hero {
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.hero h1 {
+  font-size: 34px;
+  line-height: 1.25; /* 中文标题不宜过紧 */
+  font-weight: 650; /* Variable Font 可以使用 650 获得完美平衡 */
+  margin: 0 0 16px 0;
+  letter-spacing: 0; /* 移除负字距，中文不需要负字距 */
+}
+
+.hero .highlight {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero p {
+  font-size: 17px;
+  line-height: 1.6; /* 中文块需要更大的行高 */
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  font-weight: 450; /* 在深色毛玻璃上稍微加粗以提升辨识度 */
+  letter-spacing: 0.01em;
+}
+
+.input-group {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: var(--r);
+  padding: 16px;
+  cursor: text;
+  min-height: 56px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  transition: padding 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-group.has-value {
+  padding: 24px 16px 8px;
+  align-items: flex-end;
+}
+
+.input-group::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  padding: 1px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+}
+
+.input-group label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.4); /* 稍微提升亮度 */
+  font-weight: 450;
+  letter-spacing: 0.01em;
+  pointer-events: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: left center;
+}
+
+/* Label floats up only when input has value */
+.input-group.has-value label {
+  top: 8px;
+  transform: translateY(0);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 550;
+  letter-spacing: 0.02em; /* 小字号需要微量正字距 */
+}
+
+.input-group input {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  width: 100%;
+  outline: none;
+  font-family: inherit;
+  padding: 0;
+}
+
+/* 通用 Liquid Glass 按钮 (白框/浅底) */
+.liquid-glass-btn {
+  background: rgba(255, 255, 255, 0.04);
+  position: relative;
+  z-index: 1;
+  border: none;
+  color: rgba(255, 255, 255, 0.85);
+}
+.liquid-glass-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  clip-path: inset(0 round var(--r));
+  backdrop-filter: blur(12px)
+    url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="l" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="40"/></filter></svg>#l');
+}
+.liquid-glass-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow:
+    inset 1px 1px 0px rgba(255, 255, 255, 0.3),
+    inset -1px -1px 0px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 8px 1px rgba(255, 255, 255, 0.08);
+  border: 0.5px solid transparent;
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.4),
+    transparent 50%,
+    rgba(255, 255, 255, 0.1)
+  );
+  background-origin: border-box;
+  background-clip: border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+  mask-clip: content-box, border-box;
+  mask-composite: exclude;
+}
+
+/* 主按钮 (强调蓝) */
+.btn-primary {
+  width: 100%;
+  min-height: 56px;
+  box-sizing: border-box;
+  padding: 0 16px;
+  border-radius: var(--r);
+  font-size: 17px;
+  font-weight: 650;
+  letter-spacing: 0.02em; /* 按钮文字更舒展 */
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.15, 1, 0.3, 1);
+  background: rgba(10, 132, 255, 0.05);
+  color: var(--apple-blue);
+  border: none;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  clip-path: inset(0 round var(--r));
+  backdrop-filter: blur(12px)
+    url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="l" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="40"/></filter></svg>#l');
+}
+
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow:
+    inset 1px 1px 0px rgba(10, 132, 255, 0.3),
+    inset -1px -1px 0px rgba(10, 132, 255, 0.1);
+  border: 0.5px solid transparent;
+  background-image: linear-gradient(
+    135deg,
+    rgba(10, 132, 255, 0.4),
+    transparent 50%,
+    rgba(10, 132, 255, 0.1)
+  );
+  background-origin: border-box;
+  background-clip: border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+  mask-clip: content-box, border-box;
+  mask-composite: exclude;
+}
+
+.btn-primary:hover {
+  background: rgba(10, 132, 255, 0.12);
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 0 24px rgba(10, 132, 255, 0.25),
+    inset 0 8px 32px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 0 12px rgba(10, 132, 255, 0.5);
+}
+
+.btn-primary:active {
+  transform: scale(0.975) translateY(0);
+  transition: 0.1s;
+  box-shadow: inset 0 0 8px rgba(10, 132, 255, 0.15);
+}
+
+/* 演示链接 (次要) */
+.demo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  border-radius: var(--r);
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 550;
+  letter-spacing: 0.01em;
+  transition: all 0.2s ease;
+}
+
+.demo-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.step-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-radius: var(--r);
+  background: rgba(255, 255, 255, 0.03);
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.step-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+}
+
+.step-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.step-info h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 650;
+  letter-spacing: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.step-info p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 450;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: 0;
+  color: rgba(255, 255, 255, 0.85);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+}
+
+/* 顶部导航 */
+.top-nav {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  right: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  pointer-events: none; /* 让中间透传点击 */
+}
+.top-nav > * {
+  pointer-events: auto;
+}
+
+.logo-pill {
+  --r: 22px;
+  border-radius: var(--r);
+  height: 44px;
+  padding: 0 20px;
+  font-size: 17px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.icon-btn {
+  --r: 22px;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.icon-btn img {
+  width: 20px;
+  height: 20px;
+  filter: invert(1) opacity(0.85);
+}
