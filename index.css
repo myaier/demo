@@ -137,8 +137,6 @@ body {
   letter-spacing: 0.01em; /* 中文基础字间距 */
   color: var(--t1); /* visionOS强调高对比度纯净感 */
   text-rendering: optimizeLegibility;
-  padding: 92px 24px 24px 24px;
-  box-sizing: border-box;
   overflow-x: hidden;
 }
 
@@ -184,13 +182,14 @@ body {
 }
 
 .main {
-  margin: auto;
+  margin: 92px auto 24px auto; /* 接管原 body 的 padding，保持位置一致 */
   width: 100%;
   max-width: 480px;
   display: flex;
   flex-direction: column;
   gap: 24px;
   padding: 48px 40px;
+  box-sizing: border-box; /* 配合 width: 100% 确保 padding 不溢出 */
 }
 
 .hero {
@@ -709,10 +708,72 @@ body.W .theme-toggle .ic { background-image: url("svg/moon.svg"); }
 
 /* --- 响应式布局：桌面端 --- */
 @media (min-width: 900px) {
-  body {
+  .main {
     /* 桌面端宽度充裕，两侧 fixed 按钮不会遮挡主体。
-       通过设置 padding-top: 24px，结合 body 的 flex column，
+       通过设置 margin-top: 24px，结合 margin-bottom: 24px，
        当主体超高溢出时，其顶部会安全停靠在 24px 处，从而与 top: 24px 的 fixed 导航按钮完美平齐！ */
-    padding: 24px 48px;
+    margin: 24px auto;
+  }
+}
+
+/* --- 响应式布局：移动端融合设计 --- */
+@media (max-width: 600px) {
+  .nav {
+    top: 24px;
+    left: 16px;
+    right: 16px;
+  }
+
+  .logo {
+    /* 修正中文字体或纯大写英文由于没有下沉字符导致的视觉偏上问题 */
+    padding-top: 2px;
+  }
+
+  .LG {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  
+  .LG::before,
+  .LG::after {
+    display: none;
+  }
+  
+  .main {
+    padding-top: 0;
+    padding-bottom: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0;
+    margin-top: 92px; /* 顶部按钮24px间距 + 44px高度 + 下方24px间距 */
+    margin-bottom: 24px;
+    max-width: none;
+    width: auto;
+    align-self: stretch;
+    gap: 16px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  /* iOS 表单控件移动端适配 (缩减左右过度留白，更精致) */
+  .field {
+    min-height: 52px;
+    padding: 12px 24px;
+  }
+  .field.has-value {
+    padding: 20px 24px 4px;
+  }
+  .field label {
+    left: 24px;
+  }
+  .step {
+    padding: 16px 24px;
+  }
+  .primary {
+    min-height: 52px;
+    padding: 0 24px;
   }
 }
