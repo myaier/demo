@@ -366,7 +366,7 @@ body.W .tag {
 }
 
 /* 通用 Liquid Glass 按钮 (白框/浅底) */
-.btn {
+button, .btn {
   background: var(--bg-in);
   position: relative;
   z-index: 1;
@@ -374,17 +374,24 @@ body.W .tag {
   color: var(--t-btn);
   box-shadow: var(--el-sh);
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
+  text-decoration: none;
 }
-.btn:hover {
+button:hover, .btn:hover {
   background: var(--bg-hv);
   box-shadow: var(--el-sh-hv);
   transform: scale(1.02);
 }
-.btn:active {
+button:active, .btn:active {
   box-shadow: var(--el-sh-ac);
   transform: scale(0.97);
 }
-.btn::before {
+button::before, .btn::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -393,7 +400,7 @@ body.W .tag {
   clip-path: inset(0 round var(--r));
   backdrop-filter: blur(12px) var(--fl-gl);
 }
-.btn::after {
+button::after, .btn::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -415,7 +422,7 @@ body.W .tag {
 }
 
 /* 主按钮 (强调蓝) */
-.primary {
+button.Blue {
   width: 100%;
   min-height: 56px;
   box-sizing: border-box;
@@ -424,58 +431,20 @@ body.W .tag {
   font-size: 17px;
   font-weight: 400;
   letter-spacing: 0.02em; /* 按钮文字更舒展 */
-  cursor: pointer;
   transition: all 0.4s cubic-bezier(0.15, 1, 0.3, 1);
   background: var(--btn-bg);
   color: var(--c-blue);
-  border: none;
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   box-shadow: var(--btn-sh);
 }
 
-.primary::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  border-radius: inherit;
-  clip-path: inset(0 round var(--r));
-  backdrop-filter: blur(12px) var(--fl-gl);
-}
-
-.primary::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  border-radius: inherit;
-  pointer-events: none;
-  
-  border: 0.5px solid transparent;
-  background-image: linear-gradient(
-    180deg,
-    var(--bd-m),
-    var(--bd-l)
-  );
-  background-origin: border-box;
-  background-clip: border-box;
-  mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
-  mask-clip: content-box, border-box;
-  mask-composite: exclude;
-}
-
-.primary:hover {
+button.Blue:hover {
   background: var(--btn-hv);
   transform: translateY(-1px);
   box-shadow: var(--btn-sh-hv);
   text-shadow: 0 0 12px var(--btn-t-sh);
 }
 
-.primary:active {
+button.Blue:active {
   transform: scale(0.975) translateY(0);
   transition: 0.1s;
   box-shadow: var(--btn-sh-ac);
@@ -681,19 +650,14 @@ body.W .tag {
   gap: 12px;
 }
 
-.icon {
+.actions button {
   --r: 22px;
   width: 44px;
   height: 44px;
   border-radius: var(--r);
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
 }
 
-.icon .ic {
+button .ic {
   display: block;
   width: 20px;
   height: 20px;
@@ -703,10 +667,10 @@ body.W .tag {
   filter: var(--ic-fl);
 }
 
-.theme-toggle .ic { background-image: url("svg/sun.svg"); }
-body.W .theme-toggle .ic { background-image: url("svg/moon.svg"); }
-.lang-toggle .ic { background-image: url("svg/lang.svg"); }
-.menu-toggle .ic { background-image: url("svg/menu.svg"); }
+#theme-toggle .ic { background-image: url("svg/sun.svg"); }
+body.W #theme-toggle .ic { background-image: url("svg/moon.svg"); }
+#lang-toggle .ic { background-image: url("svg/lang.svg"); }
+#menu-toggle .ic { background-image: url("svg/menu.svg"); }
 
 /* --- 响应式布局：中等屏幕 (平板/窄屏桌面) --- */
 @media (max-width: 900px) {
@@ -765,7 +729,7 @@ body.W .theme-toggle .ic { background-image: url("svg/moon.svg"); }
   .step {
     padding: 16px 24px;
   }
-  .primary {
+  button.Blue {
     min-height: 52px;
     padding: 0 24px;
   }
