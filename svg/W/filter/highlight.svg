@@ -5,7 +5,7 @@
     <feDisplacementMap in="blurA" in2="n" scale="4" result="w"/>
     <feGaussianBlur in="w" stdDeviation="1.2" result="b"/>
     <feSpecularLighting in="b" surfaceScale="2" specularConstant="1.2" specularExponent="70" lighting-color="white" result="s">
-      <feDistantLight azimuth="225" elevation="45"/>
+      <feDistantLight azimuth="270" elevation="50"/>
     </feSpecularLighting>
     <feComposite in="s" in2="SourceAlpha" operator="in" result="ms"/>
     <feGaussianBlur in="ms" stdDeviation="0.5" result="ms_soft"/>
