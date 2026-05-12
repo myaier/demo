@@ -80,7 +80,7 @@ body.W {
     inset 0px -2px 4px rgba(255, 255, 255, 0.8),
     inset 0 0 0 0.5px rgba(0, 0, 0, 0.05),
     inset 0 2px 8px rgba(0, 122, 255, 0.1);
-  --ic-fl: url("svg/W/filter/ic-glass.svg#glass");
+  --ic-fl: opacity(0.8); /* 清理掉原本复杂的玻璃滤镜，恢复纯净清爽的纯色图标 */
   --bg-img: url("svg/W/bg.svg");
   --div-bg: url("svg/W/divider.svg") no-repeat center/100% 100%;
   --div-c: transparent;
