@@ -70,12 +70,12 @@
             grp = byId("email-group"),
             themeToggle = byId('theme-toggle'),
             prefersDark = window.matchMedia('(prefers-color-scheme: dark)'),
-            setTheme = isDark => body.classList.toggle('W', !isDark);
+            setTheme = isDark => body.classList.toggle('B', isDark);
 
       inp.addEventListener("input", () => grp.classList.toggle("has-value", inp.value.length > 0));
       setTheme(prefersDark.matches);
       prefersDark.addEventListener('change', e => setTheme(e.matches));
-      themeToggle.addEventListener('click', () => setTheme(body.classList.contains('W')));
+      themeToggle.addEventListener('click', () => setTheme(!body.classList.contains('B')));
     </script>
   </body>
 </html>
