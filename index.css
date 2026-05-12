@@ -182,9 +182,9 @@ body {
 }
 
 .main {
-  margin: 92px auto 24px auto; /* 接管原 body 的 padding，保持位置一致 */
+  margin: 24px auto; /* 桌面端宽度充裕，两侧 fixed 按钮不会遮挡主体。当主体超高溢出时，顶部安全停靠在 24px 处 */
   width: 100%;
-  max-width: 480px;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -706,13 +706,11 @@ body.W .theme-toggle .ic { background-image: url("svg/moon.svg"); }
 .lang-toggle .ic { background-image: url("svg/lang.svg"); }
 .menu-toggle .ic { background-image: url("svg/menu.svg"); }
 
-/* --- 响应式布局：桌面端 --- */
-@media (min-width: 900px) {
+/* --- 响应式布局：中等屏幕 (平板/窄屏桌面) --- */
+@media (max-width: 900px) {
   .main {
-    /* 桌面端宽度充裕，两侧 fixed 按钮不会遮挡主体。
-       通过设置 margin-top: 24px，结合 margin-bottom: 24px，
-       当主体超高溢出时，其顶部会安全停靠在 24px 处，从而与 top: 24px 的 fixed 导航按钮完美平齐！ */
-    margin: 24px auto;
+    /* 屏幕较窄时，防止两侧 fixed 按钮遮挡主体，增加顶部基础间距 */
+    margin: 92px auto 24px auto;
   }
 }
 
@@ -722,11 +720,6 @@ body.W .theme-toggle .ic { background-image: url("svg/moon.svg"); }
     top: 24px;
     left: 16px;
     right: 16px;
-  }
-
-  .logo {
-    /* 修正中文字体或纯大写英文由于没有下沉字符导致的视觉偏上问题 */
-    padding-top: 2px;
   }
 
   .LG {
