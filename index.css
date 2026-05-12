@@ -255,7 +255,7 @@ body {
   mask-composite: exclude;
 }
 
-.field {
+.LF {
   position: relative;
   z-index: 1;
   border-radius: var(--r);
@@ -269,7 +269,7 @@ body {
   box-shadow: var(--in-sh);
 }
 
-.field::before {
+.LF::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -281,12 +281,12 @@ body {
   filter: var(--fl-hl);
 }
 
-.field.has-value {
+.LF.has-value {
   padding: 24px 28px 8px;
   align-items: flex-end;
 }
 
-.field::after {
+.LF::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -307,7 +307,7 @@ body {
   mask-composite: exclude;
 }
 
-.field label {
+.LF label {
   position: absolute;
   left: 28px;
   top: 50%;
@@ -322,7 +322,7 @@ body {
 }
 
 /* Label floats up only when input has value */
-.field.has-value label {
+.LF.has-value label {
   top: 8px;
   transform: translateY(0);
   font-size: 12px;
@@ -703,14 +703,14 @@ body.B #theme-toggle::before { background-image: url("svg/sun.svg"); }
   }
 
   /* iOS 表单控件移动端适配 (缩减左右过度留白，更精致) */
-  .field {
+  .LF {
     min-height: 52px;
     padding: 12px 24px;
   }
-  .field.has-value {
+  .LF.has-value {
     padding: 20px 24px 4px;
   }
-  .field label {
+  .LF label {
     left: 24px;
   }
   .step {
