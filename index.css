@@ -344,7 +344,7 @@ body.W .tag {
   letter-spacing: 0.02em; /* 小字号需要微量正字距 */
 }
 
-.field input {
+input {
   background: transparent;
   border: none;
   color: var(--t1);
@@ -358,10 +358,10 @@ body.W .tag {
 }
 
 /* 消除浏览器原生自动补全的默认纯色背景 */
-.field input:autofill,
-.field input:autofill:hover, 
-.field input:autofill:focus, 
-.field input:autofill:active {
+input:autofill,
+input:autofill:hover, 
+input:autofill:focus, 
+input:autofill:active {
   transition: background-color 5000s ease-in-out 0s;
 }
 
