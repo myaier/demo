@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <filter id="glass" color-interpolation-filters="sRGB">
+    <!-- Subtle drop shadow to lift the glass off the background -->
+    <feDropShadow in="SourceAlpha" dx="0" dy="1" stdDeviation="1" flood-color="rgba(0,0,0,0.15)" result="drop"/>
+    
+    <!-- Specular lighting to create the sharp, 3D glassy edge reflection -->
+    <feGaussianBlur in="SourceAlpha" stdDeviation="0.75" result="blur"/>
+    <feSpecularLighting in="blur" surfaceScale="2" specularConstant="1.5" specularExponent="30" lighting-color="white" result="spec">
+      <fePointLight x="-10" y="-10" z="20"/>
+    </feSpecularLighting>
+    <feComposite in="spec" in2="SourceAlpha" operator="in" result="spec"/>
+    
+    <!-- The translucent body of the glass (very faint dark grey) -->
+    <feComponentTransfer in="SourceAlpha" result="alpha">
+      <feFuncA type="linear" slope="0.3"/>
+    </feComponentTransfer>
+    <feFlood flood-color="#333333" result="dark"/>
+    <feComposite in="dark" in2="alpha" operator="in" result="body"/>
+    
+    <!-- Merge layers: shadow -> translucent body -> specular highlight -->
+    <feMerge>
+      <feMergeNode in="drop"/>
+      <feMergeNode in="body"/>
+      <feMergeNode in="spec"/>
+    </feMerge>
+  </filter>
+</svg>
