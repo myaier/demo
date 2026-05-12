@@ -123,6 +123,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: var(--c-bg);
   background-image: var(--bg-img), var(--bg-fallback);
   background-position: center;
@@ -182,7 +184,7 @@ body {
 }
 
 .main {
-  margin: 24px auto; /* 桌面端宽度充裕，两侧 fixed 按钮不会遮挡主体。当主体超高溢出时，顶部安全停靠在 24px 处 */
+  margin: 24px; /* 当主体超高溢出时，留出安全间距 */
   width: 100%;
   max-width: 600px;
   display: flex;
@@ -709,8 +711,8 @@ body.W .theme-toggle .ic { background-image: url("svg/moon.svg"); }
 /* --- 响应式布局：中等屏幕 (平板/窄屏桌面) --- */
 @media (max-width: 900px) {
   .main {
-    /* 屏幕较窄时，防止两侧 fixed 按钮遮挡主体，增加顶部基础间距 */
-    margin: 92px auto 24px auto;
+    /* 屏幕较窄时，依然保持居中，但留出足够的安全间距防止与固定导航重叠 */
+    margin: 92px 24px 24px 24px;
   }
 }
 
@@ -738,9 +740,7 @@ body.W .theme-toggle .ic { background-image: url("svg/moon.svg"); }
     padding-bottom: 24px;
     padding-left: 20px;
     padding-right: 20px;
-    margin: 0;
-    margin-top: 92px; /* 顶部按钮24px间距 + 44px高度 + 下方24px间距 */
-    margin-bottom: 24px;
+    margin: 92px 0 24px 0; /* 顶部按钮24px间距 + 44px高度 + 下方24px间距 */
     max-width: none;
     width: auto;
     align-self: stretch;
