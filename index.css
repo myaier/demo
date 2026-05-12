@@ -14,12 +14,12 @@ b {
   --t3: #636366;
   --t4: #8E8E93;
   --t-btn: #D1D1D6;
-  --bg: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.01));
+  --bg: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.01));
   --bg-in: rgba(255, 255, 255, 0.04);
   --bg-st: rgba(255, 255, 255, 0.02);
   --bg-num: rgba(255, 255, 255, 0.06);
   --bg-hv: rgba(255, 255, 255, 0.12);
-  --bg-tg: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  --bg-tg: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
   --bd-l: rgba(255, 255, 255, 0.2);
   --bd-d: rgba(255, 255, 255, 0.05);
   --bd-m: rgba(255, 255, 255, 0.4);
@@ -36,10 +36,10 @@ b {
   --div-bg: url("svg/B/divider.svg") no-repeat center/100% 100%;
   --div-c: transparent;
   --demo-hv: rgba(255, 255, 255, 0.08);
-  --sh: inset -4px -4px 16px rgba(0, 0, 0, 0.4), inset 0 0 0 0.5px rgba(255, 255, 255, 0.05);
-  --el-sh: inset 2px -2px 8px rgba(0, 0, 0, 0.15), inset -2px -2px 8px rgba(0, 0, 0, 0.15), inset 0 0 0 0.5px rgba(255, 255, 255, 0.05);
+  --sh: inset 0 -4px 16px rgba(0, 0, 0, 0.4), inset 0 0 0 0.5px rgba(255, 255, 255, 0.05);
+  --el-sh: inset 0 -2px 8px rgba(0, 0, 0, 0.15), inset 0 0 0 0.5px rgba(255, 255, 255, 0.05);
   --in-sh: inset 0 0 0 0.5px rgba(255, 255, 255, 0.1);
-  --el-sh-hv: inset 4px -4px 16px rgba(0, 0, 0, 0.4), inset -4px -4px 16px rgba(0, 0, 0, 0.4), inset 0 0 0 0.5px rgba(255, 255, 255, 0.15);
+  --el-sh-hv: inset 0 -4px 16px rgba(0, 0, 0, 0.4), inset 0 0 0 0.5px rgba(255, 255, 255, 0.15);
   --el-sh-ac: inset 0 4px 12px rgba(0, 0, 0, 0.5), inset 0 -1px 2px rgba(255, 255, 255, 0.02), inset 0 0 0 0.5px rgba(255, 255, 255, 0.05);
   --fl-gl: url("svg/B/filter/glass.svg#l");
   --fl-hl: url("svg/B/filter/highlight.svg#hl");
@@ -53,11 +53,11 @@ body.W {
   --t3: #636366;
   --t4: #8E8E93;
   --t-btn: #3C3C43;
-  --bg: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.45));
+  --bg: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.45));
   --bg-in: linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.45));
   --bg-st: linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.35));
-  --bg-num: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 1));
-  --bg-hv: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.8));
+  --bg-num: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 1));
+  --bg-hv: linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.8));
   --bg-tg: linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.3));
   --bd-l: rgba(0, 0, 0, 0.06);
   --bd-d: rgba(0, 0, 0, 0.08);
@@ -67,11 +67,10 @@ body.W {
   --bd-f: rgba(0, 0, 0, 0.08);
   --btn-bg: linear-gradient(180deg, rgba(0, 122, 255, 0.1), rgba(0, 122, 255, 0.15));
   --btn-hv: linear-gradient(180deg, rgba(0, 122, 255, 0.15), rgba(0, 122, 255, 0.25));
-  --btn-sh: inset 0px 4px 12px rgba(255,255,255,0.4), inset 2px -2px 6px rgba(0,0,0,0.05), inset -2px -2px 6px rgba(0,0,0,0.05), inset 0 0 0 0.5px rgba(255,255,255,0.5);
+  --btn-sh: inset 0px 4px 12px rgba(255,255,255,0.4), inset 0px -2px 6px rgba(0,0,0,0.05), inset 0 0 0 0.5px rgba(255,255,255,0.5);
   --btn-sh-hv: 
     inset 0px 4px 16px rgba(255, 255, 255, 0.8), 
-    inset 4px -4px 12px rgba(0,0,0,0.1), 
-    inset -4px -4px 12px rgba(0,0,0,0.1), 
+    inset 0px -4px 12px rgba(0,0,0,0.1), 
     inset 0 0 0 0.5px rgba(255,255,255,0.8),
     inset 0 0 24px rgba(0, 122, 255, 0.2);
   --btn-sh-ac: 
@@ -83,27 +82,25 @@ body.W {
   --bg-img: url("svg/W/bg.svg");
   --div-bg: url("svg/W/divider.svg") no-repeat center/100% 100%;
   --div-c: transparent;
-  --demo-hv: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.95));
+  --demo-hv: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.95));
   
   /* Clean Shadows: crisp rims, pure glass feel */
   --sh: 
-    inset 1px 1px 6px rgba(255, 255, 255, 0.8), 
-    inset -2px -2px 8px rgba(0, 0, 0, 0.04), 
+    inset 0px 1px 6px rgba(255, 255, 255, 0.8), 
+    inset 0px -2px 8px rgba(0, 0, 0, 0.04), 
     inset 0 0 0 0.5px rgba(255, 255, 255, 0.5);
     
   /* Inner components: floating white glass */
   --el-sh: 
     inset 0px 2px 4px rgba(255, 255, 255, 0.8),
-    inset 2px -2px 4px rgba(0, 0, 0, 0.03),
-    inset -2px -2px 4px rgba(0, 0, 0, 0.03),
+    inset 0px -2px 4px rgba(0, 0, 0, 0.03),
     inset 0 0 0 0.5px rgba(255, 255, 255, 0.4);
     
   --in-sh: inset 0 0 0 0.5px rgba(0, 0, 0, 0.05);
     
   --el-sh-hv: 
     inset 0px 4px 16px rgba(255, 255, 255, 1),
-    inset 4px -4px 12px rgba(0, 0, 0, 0.12),
-    inset -4px -4px 12px rgba(0, 0, 0, 0.12),
+    inset 0px -4px 12px rgba(0, 0, 0, 0.12),
     inset 0 0 0 0.5px rgba(255, 255, 255, 0.8);
     
   --el-sh-ac: 
