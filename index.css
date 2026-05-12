@@ -7,7 +7,8 @@ b {
 
 :root {
   --c-blue: #0a84ff;
-  --c-bg: #000000;
+  --c-bg: #0a0a0c;
+  --bg-fallback: radial-gradient(circle at 50% 45%, #1a1a1c 0%, #0a0a0c 50%, #000000 100%);
   --r: 28px;
   --t1: #EBEBF5;
   --t2: #AEAEB2;
@@ -47,7 +48,8 @@ b {
 
 body.W {
   --c-blue: #007aff;
-  --c-bg: #F2F2F7;
+  --c-bg: #EAEBEF;
+  --bg-fallback: linear-gradient(135deg, #E8E8ED 0%, #FFFFFF 50%, #EAEBEF 100%);
   --t1: #333;
   --t2: #3C3C43;
   --t3: #636366;
@@ -121,8 +123,12 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: var(--bg-img) center/cover fixed;
   background-color: var(--c-bg);
+  background-image: var(--bg-img), var(--bg-fallback);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   font-family: "S";
   font-weight: 400;
   font-style: normal;
