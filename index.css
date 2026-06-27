@@ -7,14 +7,14 @@ b {
 
 :root {
   --c-blue: #007aff;
-  --c-bg: #EAEBEF;
-  --bg-fallback: linear-gradient(135deg, #E8E8ED 0%, #FFFFFF 50%, #EAEBEF 100%);
+  --c-bg: #eaebef;
+  --bg-fallback: linear-gradient(135deg, #e8e8ed 0%, #ffffff 50%, #eaebef 100%);
   --r: 28px;
   --t1: #333;
-  --t2: #3C3C43;
+  --t2: #3c3c43;
   --t3: #636366;
-  --t4: #8E8E93;
-  --t-btn: #3C3C43;
+  --t4: #8e8e93;
+  --t-btn: #3c3c43;
   --bg: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.45));
   --bg-in: linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.45));
   --bg-st: linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.35));
@@ -29,38 +29,32 @@ b {
   --bd-f: rgba(0, 0, 0, 0.08);
   --btn-bg: linear-gradient(180deg, rgba(0, 122, 255, 0.1), rgba(0, 122, 255, 0.15));
   --btn-hv: linear-gradient(180deg, rgba(0, 122, 255, 0.15), rgba(0, 122, 255, 0.25));
-  --btn-sh: inset 0px 4px 12px rgba(255,255,255,0.4), inset 0px -2px 6px rgba(0,0,0,0.05), inset 0 0 0 0.5px rgba(255,255,255,0.5);
-  --btn-sh-hv: 
-    inset 0px 4px 16px rgba(255, 255, 255, 0.8), 
-    inset 0px -4px 12px rgba(0,0,0,0.1), 
-    inset 0 0 0 0.5px rgba(255,255,255,0.8),
-    inset 0 0 24px rgba(0, 122, 255, 0.2);
-  --btn-sh-ac: 
-    inset 0px 4px 12px rgba(0, 0, 0, 0.15),
-    inset 0px -2px 4px rgba(255, 255, 255, 0.8),
-    inset 0 0 0 0.5px rgba(0, 0, 0, 0.05),
-    inset 0 2px 8px rgba(0, 122, 255, 0.1);
+  --btn-sh:
+    inset 0px 4px 12px rgba(255, 255, 255, 0.4), inset 0px -2px 6px rgba(0, 0, 0, 0.05),
+    inset 0 0 0 0.5px rgba(255, 255, 255, 0.5);
+  --btn-sh-hv:
+    inset 0px 4px 16px rgba(255, 255, 255, 0.8), inset 0px -4px 12px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 0.5px rgba(255, 255, 255, 0.8), inset 0 0 24px rgba(0, 122, 255, 0.2);
+  --btn-sh-ac:
+    inset 0px 4px 12px rgba(0, 0, 0, 0.15), inset 0px -2px 4px rgba(255, 255, 255, 0.8),
+    inset 0 0 0 0.5px rgba(0, 0, 0, 0.05), inset 0 2px 8px rgba(0, 122, 255, 0.1);
   --ic-fl: opacity(0.8);
   --bg-img: url("svg/W/bg.svg");
   --div-bg: url("svg/W/divider.svg") no-repeat center/100% 100%;
   --div-c: transparent;
   --demo-hv: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.95));
-  --sh: 
-    inset 0px 1px 6px rgba(255, 255, 255, 0.8), 
-    inset 0px -2px 8px rgba(0, 0, 0, 0.04), 
+  --sh:
+    inset 0px 1px 6px rgba(255, 255, 255, 0.8), inset 0px -2px 8px rgba(0, 0, 0, 0.04),
     inset 0 0 0 0.5px rgba(255, 255, 255, 0.5);
-  --el-sh: 
-    inset 0px 2px 4px rgba(255, 255, 255, 0.8),
-    inset 0px -2px 4px rgba(0, 0, 0, 0.03),
+  --el-sh:
+    inset 0px 2px 4px rgba(255, 255, 255, 0.8), inset 0px -2px 4px rgba(0, 0, 0, 0.03),
     inset 0 0 0 0.5px rgba(255, 255, 255, 0.4);
   --in-sh: inset 0 0 0 0.5px rgba(0, 0, 0, 0.05);
-  --el-sh-hv: 
-    inset 0px 4px 16px rgba(255, 255, 255, 1),
-    inset 0px -4px 12px rgba(0, 0, 0, 0.12),
+  --el-sh-hv:
+    inset 0px 4px 16px rgba(255, 255, 255, 1), inset 0px -4px 12px rgba(0, 0, 0, 0.12),
     inset 0 0 0 0.5px rgba(255, 255, 255, 0.8);
-  --el-sh-ac: 
-    inset 0px 4px 10px rgba(0, 0, 0, 0.1),
-    inset 0px -2px 4px rgba(255, 255, 255, 0.8),
+  --el-sh-ac:
+    inset 0px 4px 10px rgba(0, 0, 0, 0.1), inset 0px -2px 4px rgba(255, 255, 255, 0.8),
     inset 0 0 0 0.5px rgba(0, 0, 0, 0.05);
   --fl-gl: url("svg/W/filter/glass.svg#l");
   --fl-hl: url("svg/W/filter/highlight.svg#hl");
@@ -70,11 +64,11 @@ body.B {
   --c-blue: #0a84ff;
   --c-bg: #0a0a0c;
   --bg-fallback: radial-gradient(circle at 50% 45%, #1a1a1c 0%, #0a0a0c 50%, #000000 100%);
-  --t1: #EBEBF5;
-  --t2: #AEAEB2;
+  --t1: #ebebf5;
+  --t2: #aeaeb2;
   --t3: #636366;
-  --t4: #8E8E93;
-  --t-btn: #D1D1D6;
+  --t4: #8e8e93;
+  --t-btn: #d1d1d6;
   --bg: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.01));
   --bg-in: rgba(255, 255, 255, 0.04);
   --bg-st: rgba(255, 255, 255, 0.02);
@@ -101,12 +95,19 @@ body.B {
   --el-sh: inset 0 -2px 8px rgba(0, 0, 0, 0.15), inset 0 0 0 0.5px rgba(255, 255, 255, 0.05);
   --in-sh: inset 0 0 0 0.5px rgba(255, 255, 255, 0.1);
   --el-sh-hv: inset 0 -4px 16px rgba(0, 0, 0, 0.4), inset 0 0 0 0.5px rgba(255, 255, 255, 0.15);
-  --el-sh-ac: inset 0 4px 12px rgba(0, 0, 0, 0.5), inset 0 -1px 2px rgba(255, 255, 255, 0.02), inset 0 0 0 0.5px rgba(255, 255, 255, 0.05);
+  --el-sh-ac:
+    inset 0 4px 12px rgba(0, 0, 0, 0.5), inset 0 -1px 2px rgba(255, 255, 255, 0.02),
+    inset 0 0 0 0.5px rgba(255, 255, 255, 0.05);
   --fl-gl: url("svg/B/filter/glass.svg#l");
   --fl-hl: url("svg/B/filter/highlight.svg#hl");
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
 }
 
@@ -160,13 +161,9 @@ body {
   z-index: -1;
   border-radius: inherit;
   pointer-events: none;
-  
+
   border: 0.5px solid transparent;
-  background-image: linear-gradient(
-    180deg,
-    var(--bd-m),
-    var(--bd-l)
-  );
+  background-image: linear-gradient(180deg, var(--bd-m), var(--bd-l));
   background-origin: border-box;
   background-clip: border-box;
   mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
@@ -231,7 +228,7 @@ body {
   background: var(--bg-tg);
   position: relative;
   z-index: 1;
-      box-shadow: var(--el-sh);
+  box-shadow: var(--el-sh);
 }
 
 .tag::after {
@@ -241,13 +238,9 @@ body {
   z-index: -1;
   border-radius: inherit;
   pointer-events: none;
-  
+
   border: 0.5px solid transparent;
-  background-image: linear-gradient(
-    180deg,
-    var(--bd-m),
-    var(--bd-l)
-  );
+  background-image: linear-gradient(180deg, var(--bd-m), var(--bd-l));
   background-origin: border-box;
   background-clip: border-box;
   mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
@@ -293,13 +286,9 @@ body {
   z-index: -1;
   border-radius: inherit;
   pointer-events: none;
-  
+
   border: 0.5px solid transparent;
-  background-image: linear-gradient(
-    180deg,
-    var(--bd-m),
-    var(--bd-l)
-  );
+  background-image: linear-gradient(180deg, var(--bd-m), var(--bd-l));
   background-origin: border-box;
   background-clip: border-box;
   mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
@@ -346,14 +335,15 @@ input {
 
 /* 消除浏览器原生自动补全的默认纯色背景 */
 input:autofill,
-input:autofill:hover, 
-input:autofill:focus, 
+input:autofill:hover,
+input:autofill:focus,
 input:autofill:active {
   transition: background-color 5000s ease-in-out 0s;
 }
 
 /* 通用 Liquid Glass 按钮 (白框/浅底) */
-button, .btn {
+button,
+.btn {
   background: var(--bg-in);
   position: relative;
   z-index: 1;
@@ -371,16 +361,19 @@ button, .btn {
   backdrop-filter: blur(12px) var(--fl-gl);
   clip-path: inset(0 round var(--r));
 }
-button:hover, .btn:hover {
+button:hover,
+.btn:hover {
   background: var(--bg-hv);
   box-shadow: var(--el-sh-hv);
   transform: scale(1.02);
 }
-button:active, .btn:active {
+button:active,
+.btn:active {
   box-shadow: var(--el-sh-ac);
   transform: scale(0.97);
 }
-button::before, .btn::before {
+button::before,
+.btn::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -390,20 +383,17 @@ button::before, .btn::before {
   filter: var(--ic-fl);
   pointer-events: none;
 }
-button::after, .btn::after {
+button::after,
+.btn::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
   border-radius: inherit;
   pointer-events: none;
-  
+
   border: 0.5px solid transparent;
-  background-image: linear-gradient(
-    180deg,
-    var(--bd-m),
-    var(--bd-l)
-  );
+  background-image: linear-gradient(180deg, var(--bd-m), var(--bd-l));
   background-origin: border-box;
   background-clip: border-box;
   mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
@@ -502,13 +492,9 @@ button.Blue:active {
   z-index: -1;
   border-radius: inherit;
   pointer-events: none;
-  
+
   border: 0.5px solid transparent;
-  background-image: linear-gradient(
-    180deg,
-    var(--bd-m),
-    var(--bd-l)
-  );
+  background-image: linear-gradient(180deg, var(--bd-m), var(--bd-l));
   background-origin: border-box;
   background-clip: border-box;
   mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
@@ -574,7 +560,7 @@ button.Blue:active {
   user-select: none;
   position: relative;
   z-index: 1;
-      box-shadow: var(--el-sh);
+  box-shadow: var(--el-sh);
 }
 
 .num::before {
@@ -587,9 +573,15 @@ button.Blue:active {
   filter: var(--ic-fl);
 }
 
-.step-link::before { background-image: url("svg/link.svg"); }
-.step-settings::before { background-image: url("svg/settings.svg"); }
-.step-bell::before { background-image: url("svg/bell.svg"); }
+.step-link::before {
+  background-image: url("svg/link.svg");
+}
+.step-settings::before {
+  background-image: url("svg/settings.svg");
+}
+.step-bell::before {
+  background-image: url("svg/bell.svg");
+}
 
 .num::after {
   content: "";
@@ -598,13 +590,9 @@ button.Blue:active {
   z-index: -1;
   border-radius: inherit;
   pointer-events: none;
-  
+
   border: 0.5px solid transparent;
-  background-image: linear-gradient(
-    180deg,
-    var(--bd-m),
-    var(--bd-l)
-  );
+  background-image: linear-gradient(180deg, var(--bd-m), var(--bd-l));
   background-origin: border-box;
   background-clip: border-box;
   mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
@@ -654,10 +642,18 @@ button.Blue:active {
   border-radius: var(--r);
 }
 
-#theme-toggle::before { background-image: url("svg/moon.svg"); }
-body.B #theme-toggle::before { background-image: url("svg/sun.svg"); }
-#lang-toggle::before { background-image: url("svg/lang.svg"); }
-#menu-toggle::before { background-image: url("svg/menu.svg"); }
+#theme-toggle::before {
+  background-image: url("svg/moon.svg");
+}
+body.B #theme-toggle::before {
+  background-image: url("svg/sun.svg");
+}
+#lang-toggle::before {
+  background-image: url("svg/lang.svg");
+}
+#menu-toggle::before {
+  background-image: url("svg/menu.svg");
+}
 
 /* --- 响应式布局：中等屏幕 (平板/窄屏桌面) --- */
 @media (max-width: 900px) {
@@ -680,12 +676,12 @@ body.B #theme-toggle::before { background-image: url("svg/sun.svg"); }
     box-shadow: none;
     border-radius: 0;
   }
-  
+
   .LG::before,
   .LG::after {
     display: none;
   }
-  
+
   .main {
     padding-top: 0;
     padding-bottom: 24px;
